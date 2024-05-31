@@ -1,0 +1,1089 @@
+---
+title: "Bausteine Computergestützter Datenanalyse"
+subtitle: "01 Pseudocode"
+author: "Maik Poetzsch"
+date: today # "2024-03-05" Jahr-Monat-Tag / year-month-day
+
+# Dokumenteneinstellungen / document options
+engine: knitr # jupyter kann den CSS-Code für Blocksatz nicht verarbeiten
+mermaid: 
+  theme: neutral # default hat zu dunkle subgraphs
+
+## Spracheinstellungen / language settings
+lang: de
+
+## Formatoption / formating options
+format:
+  html:
+    self-contained: true # erzeugt eine all in one HTML-Datei
+    default-image-extension: svg
+    code-copy: true # hover is default
+  pdf:
+    cite-method: biblatex
+    biblio-title: Quellen
+    default-image-extension: png # Vektorgrafiken werden als PDF eingebunden / vector grafics are embedded as PDF
+
+## Inhaltsverzeichnis / table of contents
+toc: true
+number-sections: true
+number-depth: 2
+
+## Bibliographie / bibliography
+bibliography: bibliography.bib
+biblio-style: authoryear
+
+## Objekteinstellungen / object options
+cap-location: bottom
+fig-align: center
+
+### Grafiken von R oder Matplotlib / Figures from R or Matplotlib
+# Empfehlung von / suggestion from https://r4ds.hadley.nz/quarto#sec-figures
+fig-width: 6
+fig-asp: 0.618
+---
+<!-- Blocksatz / justify text -->
+```{css} 
+#| echo: false
+p {
+  text-align: justify /* alternativ: start, end, center */
+  
+}
+```
+
+&nbsp;
+
+&nbsp;
+
+::: {.border #Lizenz}
+
+<!-- Die Lizenz wird manuell in einer Div erstellt, um Vorgaben für OER hinsichtlich Position und Format zu entsprechen. (licence key im YAML-Header funktioniert in PDF nicht.) -->
+
+:::: {layout="[20, 80]"}
+![](skript/00-bilder/CC-BY) <!-- Grafik ohne Titel und Dateiendung einbinden -->  
+
+Bausteine Computergestützter Datenanalyse. 01 Pseudocode von Maik Poetzsch ist lizensiert unter [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de). Das Werk ist abrufbar auf [GitHub](https://github.com/bausteine-der-datenanalyse). Ausgenommen von der Lizenz sind alle Logos und anders gekennzeichneten Inhalte. 2024
+
+::::
+:::
+
+{{< pagebreak >}}
+
+{{< include _voraussetzungen.md >}}
+
+{{< include _lernziele.md >}}
+
+# Was ist Pseudocode?
+
+![&nbsp;](/skript/00-bilder/festmahl-PCL.png){fig-alt="Dekoratives Bild einer am gedeckten Tisch sitzenden Gesellschaft aus vier Personen. Ein Mann ist aufgestanden, um einen Toast auszusprechen." width="50%"}
+
+::: {.border}
+Toast Dining Eating von OpenClipart-Vectors ist lizensiert unter [Pixabay Content License](https://pixabay.com/service/license-summary/). Das Werk ist abrufbar auf [Pixabay](https://pixabay.com/vectors/toast-dining-eating-event-festive-153723/).
+:::
+
+&nbsp;
+
+Denken Sie an die Zubereitung eines Festtagsmahls. Sie haben im Internet ein Rezept gefunden, alle Zutaten von der Zutatenliste eingekauft und beginnen entsprechend der angegebenen Zubereitungszeit vor der Ankunft Ihrer Gäste zu kochen. Klingt gut, oder? Nun, dieses Vorgehen verspricht hungrig wartende Gäste, denn Rezepte sind häufig keine fertige Schritt-für-Schritt-Anleitung, sondern erfordern einige Vorarbeit:
+
+* Mal fehlen Zutaten auf der Zutatenliste, mal bleibt eine zu besorgende Zutat im Rezept unerwähnt und am Ende übrig. Im vierten Schritt ruht der Teig bereits seit zwei Stunden im Kühlschrank und der Ofen ist schon auf 250 Grad vorgeheizt.
+Eine vollständige Aufgabenbeschreibung erfordert Vorbereitung: Nur wer alle Abhängigkeiten kennt, wird pünktlich fertig.
+
+* In der Küche gilt eine eigene Fachsprache: Wissen Sie, was blanchieren bedeutet, wieso selbst sauberes Gemüse geputzt werden soll, wann Nudeln al dente sind oder ob die Soße erst lichterloh brennen sollte, damit man sie ablöschen kann? Falls nicht, ist zunächst etwas Übersetzungsarbeit in eine für Sie verständliche Sprache gefragt.
+
+* Wer kein Messer hat, kann kein Brot schneiden: Die Zutaten sind nicht alles, zu einem gelungenen Gericht gehört auch das richtige Werkzeug. Haben Sie alles in der Küche, was Sie zur Zubereitung brauchen?
+
+Kurz: Sie brauchen einen eigenen Plan – nicht nur beim Kochen, sondern auch bei der computergestützten Datenanalyse. Denn auch die Datenanalyse erfolgt selten linear. Stattdessen wechseln sich Schritte zur Organisation, Visualisierung, Auswertung und Weiterverarbeitung von Daten ab. Dazu steht eine Vielzahl unterschiedlicher Programme mit eigener Syntax zur Auswahl. Oder ist eine selbst geschriebene Funktion besser geeignet? Häufig liegen Daten in unterschiedlichen Formaten vor und müssen für die Verwendung spezialisierter Programme transformiert werden. 
+Dies sind typische Herausforderungen der Datenanalyse, die durch eine gute Planung aufgefangen werden können. Bei der Planung hilft Ihnen Pseudocode.
+
+Pseudocode beschreibt ein Programm und informatische Konzepte in einer leicht verständlichen, alltäglichen Sprache. Die Entwicklung von Pseudocode kann sowohl als Kreativitätstechnik als auch als Schablone zur strukturierten Lösung von Aufgabenstellungen genutzt werden. Pseudocode erlaubt es, sich zunächst auf die konzeptionelle Lösung einer Aufgabenstellung und die Planung des Programmaufbaus zu fokussieren. Dies kann sinnvoll sein, um durch die Unterteilung des Programms in Zwischenschritte die Entwicklung zu vereinfachen, benötigte Programme, Pakete und Methoden zu identifizieren oder den  Arbeitsaufwand abzuschätzen.
+
+Pseudocode ist auch ein Instrument, um sich mit Dritten über ein Programm auszutauschen, zum Beispiel um ein Problem im Code zu erörtern. Denn Pseudocode setzt keine Kenntnis einer bestimmten Programmiersprache voraus und ist intuitiv verständlich. Zur Unterstützung der Kommunikationsfunktion von Pseudocode kann dieser zum Beispiel als Flussdiagramm visualisiert werden.
+
+:::{.callout-important}
+## Definition Pseudocode
+Pseudocode beschreibt einen Lösungsweg für informatische Aufgabenstellungen in formalisierter Alltagssprache statt mit den Ausdrücken und der Syntax einer Programmiersprache. Das Präfix pseudo stammt aus dem Griechischen und bedeutet falsch oder nur so aussehen als ob. Pseudocode ist ‚falscher‘ Programmcode, der mit natürlicher Sprache gebildet wird. [@Pseudocode-was-ist]
+Pseudocode ist darüber hinaus auch ein Kommunikationsmittel, um sich mit anderen über informatische Probleme und deren Lösung auszutauschen (z. B. Kommiliton:innen, Betreuer:innen).
+:::
+
+### Pseudocode von einfach bis ausführlich
+In welcher Form und wie detailliert Sie Pseudocode formulieren, ist abhängig von Ihrem Kenntnisstand und Ihrem Ziel: Für die Strukturierung Ihres Programms in aufeinanderfolgende Zwischenschritte und die Identifizierung von Abhängigkeiten ist eine einfache Auflistung von Arbeitsschritten ausreichend. Für die Identifizierung von benötigten Methoden (z. B. Schleifen) und Werkzeugen (z. B. spezialisierte Pakete) wird es erforderlich sein, Programmanweisungen detailierter zu beschreiben. Eine ausführliche Darstellung hilft Ihnen zum Beispiel, wiederkehrende Arbeitsschritte zu identifizieren, die in eine Funktion ausgelagert werden können. Für die Präsentation Ihres Programms auf einer Fachtagung oder die Dokumentation in einem Benutzer:innenhandbuch kann ein Flussdiagramm zweckmäßig sein.
+
+::: {.panel-tabset}
+
+## einfach
+Programmanweisung mit sprechendem Namen
+
+`SortiereAufsteigend`
+
+## mittel
+Anweisungsblock in Alltagssprache
+
+```
+  SortiereAufsteigend
+    DurchlaufeDatensatz (LängeDatensatz - 1) mal # Anzahl Wiederholungen
+      Von Anfang bis (LängeDatensatz - 1) # Paarweise Vergleiche
+        Vergleiche Wert und Nachfolger
+        WENN Wert größer als Nachfolger DANN
+          Vertausche Wert und Nachfolger
+    AusgabeDatensatz 
+```
+
+## ausführlich
+Anweisungsblock im Stil und mit Begriffen der Programmierung
+```
+
+  SortiereAufsteigend  
+    WENN LängeDatensatz > 1 DANN
+      VON Datensatz[IndexA = 1] BIS Datensatz [IndexA = LängeDatensatz - 1] TUE # Anzahl Schleifendurchläufe
+        VON Datensatz[IndexB = 1] BIS Datensatz [IndexB = LängeDatensatz - 1] TUE # Paarweise Vergleiche
+          WENN Datensatz[IndexB] > Datensatz[IndexB + 1] DANN
+            Vertausche(Datensatz[IndexB], Datensatz[IndexB + 1])
+              Schreibe(Datensatz[IndexB], nach = Zwischenlager)
+              Schreibe(Datensatz[IndexB + 1], nach = Datensatz[IndexB])
+              Schreibe(Zwischenlager, nach = Datensatz[IndexB + 1])
+          WENN IndexB < LängeDatensatz - 1 DANN
+            Erhöhe IndexB
+      WENN IndexA < LängeDatensatz - 1 DANN
+        Erhöhe IndexA
+    AusgabeDatensatz
+```
+
+## Flussdiagramm
+
+![Flussdiagramm Sortiere Aufsteigend](skript/00-bilder/flussdiagramm-bubblesort-ms-mp.png){fig-alt="Ein Flussdiagramm, dass den Programmablauf aus dem Reiter ausführlich zeigt." width="50%"}
+
+:::: {.border}
+Flussdiagramm von Marc Sönnecken und Maik Poetzsch
+::::
+:::
+
+&nbsp;
+
+# Pseudocode erstellen
+Das im Folgenden vorgestellte Schema unterstützt Sie dabei, Ideen zu entwickeln, ein Programm zu beschreiben und den Programmablauf zu visualisieren. Pseudocode hilft Ihnen, Ihr Programm sowie die benötigten Werkzeuge und Methoden in einer für Sie und Dritte verständlichen Weise zu beschreiben. Wie Sie Pseudocode verfassen, ist eine individuelle Angelegenheit, denn für die Erstellung von Pseudocode gibt es nur wenige Regeln. Pseudocode soll vor allem Ihnen helfen, einen Lösungsweg für eine Aufgabenstellung zu entwickeln. Pseudocode ist dann ‚richtig‘ geschrieben, wenn er Ihnen hilft:
+
+*	Ihre Gedanken zu fokussieren,
+
+*	eine Aufgabenstellung für Sie nachvollziehbar zu beschreiben,
+
+*	die Aufgabenstellung in abgegrenzte Teilaufgaben zu untergliedern,
+
+*	für die Teilaufgaben eine Lösungsvorschrift (Algorithmus) zu entwickeln,
+
+*	benötigte Methoden und Werkzeuge zu identifizieren,
+
+*	Ihre Lösungsvorschriften als ein Programm aufeinanderfolgender Arbeitsschritte zu beschreiben,
+
+* den Zeitaufwand für die Umsetzung abzuschätzen sowie
+
+*	sich mit Dritten über Ihr Programm auszutauschen.
+
+## Übungsaufgaben
+Für die Bearbeitung dieses Bausteins stehen **drei** Übungsaufgaben zur Auswahl. Die Übungsaufgaben sprechen Studierende mit unterschiedlichen Vorkenntnissen an und verdeutlichen Teilaspekte der Programmentwicklung.
+
+
+::: {.panel-tabset}
+## Übersicht
+
+* Einfach: Hefezopf backen  
+Lernziele: Aufgabenstellung in aufeinanderfolgende Arbeitsschritte untergliedern, Arbeitsschritte vollständig beschreiben, Abhängigkeiten und Voraussetzungen identifizieren (benötigte Werkzeuge identifizieren, Zeitaufwand schätzen)  
+
+* Mittel: Vitamin C bei Meerschweinchen  
+Lernziele: Datenanalyse in Pseudocode beschreiben.  
+**Entspricht nicht den formulierten Lernzielen. Zu simpel?!**
+
+* Schwer: Börsenstrategie entwickeln  
+Lernziele: Eine komplexe Aufgabe mit Pseudocode strukturieren.  
+**TO DO: Musterlösung entwickeln / als Übungsaufgabe in Kapitel 5 hinterlegen.**
+
+Am besten eignet sich jedoch ein eigenes Projekt, das Sie bearbeiten möchten. Dazu haben Sie im Reiter "Eigenes Projekt" die Möglichkeit, eine eigene Aufgabenstellung zu formulieren.
+
+## Eigenes Projekt
+Hier können Sie die Aufgabenstellung bzw. das Ziel Ihres Projekts festhalten. Bitte beachten Sie, dass Ihr Text nicht gespeichert wird.
+
+<textarea id=“own-project” name=“own-project” rows="4" cols="50"></textarea>
+
+## Hefezopf backen
+Ihre Freundin Lisa schickt Ihnen ein Rezept, dass Sie im Internet gefunden hat. Sie schreibt, dass Sie morgen schon eine Stunde früher zum geplanten Treffen kommen kann, um vorher gemeinsam mit Ihnen zu backen – zu zweit würde man schon schneller fertig werden als in den im Rezept angegebenen 65 Minuten. Lisa fragt auch, ob Sie noch Zutaten mitbringen soll.
+
+**Wie antworten Sie Lisa? Modellieren Sie den Backprozess.**
+
+:::: {.border}
+
+Das folgende Rezept wurde von Anna-Lena erstellt und ist abrufbar unter <https://www.einfachbacken.de/rezepte/hefezopf>.
+
+***Zarter Hefezopf***  
+Arbeitszeit 40 Min.  
+Backen 25 Min.
+
+| Zutaten |  |
+|---|---|
+| 250 ml | Milch |
+| 475 g | Weizenmehl (Type 405) |
+| 60 g | Zucker |
+| ½ Würfel | frische Hefe (ca. 21 g) |
+| 50 g | weiche Butter (Zimmertemperatur) |
+| 1 Prise | Salz |
+| 1 | Ei (Gr. M) |
+|   | etwas Milch zum Bestreichen 
+|   | etwas Hagelzucker zum Bestreuen
+|   | etwas Mehl zur Teigverarbeitung |
+
+&nbsp;
+
+**1. Schritt**
+
+**250 ml** Milch, **475 g** Weizenmehl (Type 405), **1 Prise** Zucker, **½ Würfel** frische Hefe (ca. 21 g)
+
+Milch erwärmen bis sie lauwarm ist. Mehl in eine Schüssel sieben. Eine Mulde darin bilden und die Hefe in die Mulde bröseln. 3 EL von der lauwarmen Milch mit 1 Prise Zucker vermischen und über die Hefe in der Mulde gießen. Mit einem Löffel die Hefe-Milchmischung etwas vermischen (noch nicht das Mehl einkneten). Die Schüssel mit einem Geschirrhandtuch abdecken und an einem warmen Ort ca. 15 Min. gehen lassen.
+
+**2. Schritt**
+
+**1** Ei (Gr. M), **60 g** Zucker, **1 Prise** Salz, **50 g** weiche Butter (Zimmertemperatur)
+
+Ei, restliche Milch, restlichen Zucker und Salz in die Schüssel geben und zusammen mit der Hefemischung und dem Mehl 3 Min. auf niedriger Stufe, dann ca. 5 Min. auf hoher Stufe mit den Knethaken des Rührgeräts verkneten. Butter in Stücken nach und nach unterkneten. Damit der Teig später gut aufgeht, sollte der Teig mindestens 5 Min. kräftig geknetet werden. Sonst kann der Teig später zusammenfallen oder klebrig sein!
+
+**3. Schritt**
+
+etwas Mehl zur Teigverarbeitung
+
+Schüssel mit dem Teig nochmals mit einem Geschirrhandtuch abdecken und weitere 60 Min. an einem warmen Ort gehen lassen. Dann den[ ]Teig auf eine bemehlte Arbeitsfläche geben und in drei Teile teilen. Die Teigstücke jeweils zu einer langen Wurst mit 40 cm Länge rollen. Teigsträhnen zu einem Zopf flechten. Die Enden miteinander verdrehen und unter den Zopf legen, damit sie einen schönen Abschluss bilden. Zopf auf ein mit Backpapier belegtes Blech legen und mit einem Geschirrhandtuch abdecken. Nochmals 45 Min. gehen lassen.
+
+**4. Schritt**
+
+etwas Milch zum Bestreichen, etwas Hagelzucker zum Bestreuen
+
+Währenddessen den Backofen auf **200 Grad Ober-/ Unterhitze (Umluft: 180 Grad)** vorheizen. Zopf mit etwas Milch bestreichen und mit Hagelzucker bestreuen. Zopf schließlich im vorgeheizten Ofen **ca. 15-20 Minuten** leicht bräunlich backen. Vollständig auskühlen lassen. Der Zopf kann auch wunderbar eingefroren werden.
+::::
+
+## Vitamin C bei Meerschweinchen
+In einer Gruppe von 60 Meerschweinchen wurde die Länge der zahnbildenden Zellen (Odontoblasten) in Micron gemessen (**len**). Den Tieren wurde zuvor Vitamin C in Form von Ascorbinsäure (VC) oder Orangensaft (VC) verabreicht (**supp**). Die Meerschweinchen erhielten Dosen von 0.5, 1 oder 2 Milligramm Vitamin C pro Tag  (**dose**). [@Crampton.1947]
+
+**Welche Wirkung hat Vitamin C auf das Zahnwachstum von Meerschweinchen? Erläutern Sie Ihr Vorgehen mit Hilfe von Pseudocode oder mit Hilfe eines Flussdiagramms, um den Effekt der Verabreichungsart und der Dosis zu bestimmen.**
+
+```{r}
+#| output: FALSE
+#| echo: FALSE
+ToothGrowth[c(1, 11, 21, 31, 41, 51), ]
+```
+
+| \# | len  | supp | dose |
+|----|------|------|------|
+| 1  | 4.2  | VC   | 0.5  |
+| 11 | 16.5 | VC   | 1    |
+| 21 | 23.6 | VC   | 2    |
+| 31 | 15.2 | OJ   | 0.5  |
+| 41 | 19.7 | OJ   | 1    |
+| 51 | 25.5 | OJ   | 2    |
+
+&nbsp;
+
+Wenn Sie sich den vollständigen Datensatz ansehen möchten, können Sie diesen in R mit `ToothGrowth` aufrufen oder den Datensatz hier herunterladen: [ToothGrowth.csv](https://vincentarelbundock.github.io/Rdatasets/csv/datasets/ToothGrowth.csv)
+
+:::
+
+## Mit EVA zum Fokussprint
+![&nbsp;](skript/00-bilder/adam-eve-PCL-de.png){fig-alt="Dekorative Grafik: Die biblische Eva reicht Adam im Paradies einen Apfel. Sie sagt: Probier` doch mal Fokussprint!" width="50%"}
+
+::: {.border}
+Adam Bible Nature von CCXpistiavos ist lizensiert unter [Pixabay Content License](https://pixabay.com/service/license-summary/). Das Werk ist abrufbar auf [Pixabay](https://pixabay.com/vectors/adam-bible-bible-pics-2061819/). Die Sprechblase wurde ergänzt.
+:::
+
+&nbsp;
+
+Manchmal ist aller Anfang schwer. Der erste Schritt zur Programmentwicklung besteht in der Ideensammlung: Was soll genau getan werden, welche Schritte sind dafür erforderlich, was kann bereits erledigt werden, was muss noch vorbereitet oder recherchiert werden? **Wenn Sie bereits eine gute Vorstellung von der Aufgabenlösung haben, können Sie diesen Schritt überspringen.**
+
+Der **Fokussprint** (Scheuermann 2016) ist eine schnelle Schreibdenkübung, um einen Einstieg ins Schreiben zu einem bestimmten Thema zu finden. Die Übung kann als Kreativitätstechnik für den Einstieg in ein Thema, aber auch zwischendurch als Denkhilfe eingesetzt werden. Es geht dabei darum, mit einem hohen Schreibtempo drauflos zu schreiben. Dadurch schreiben Sie nahe an Ihrer inneren Sprache und Ihre Kreativität kann freien Lauf nehmen. [@Scheuermann2016, 74, 78]
+
+Der Fokussprint wird in zwei Schritten durchgeführt: Der erste Schritt besteht in einer fünfminütigen Schreibphase. Formulieren Sie auf einem Blatt Papier oder am Computer die Aufgabenstellung oder das Problem, zu dem Sie Ihre Gedanken sammeln möchten. Hier können Sie sich mit einem Stichwort kurzfassen oder eine konkrete Frage formulieren. Stellen Sie sich einen Wecker auf 5 Minuten und beginnen mit dem Schnellschreiben auf dem vorbereiteten Blatt. Es gibt nur eine Regel: Wenn Sie bemerken, dass Ihre Gedanken vom Thema der Überschrift abschweifen, besinnen Sie sich auf das Thema, zum Beispiel, indem Sie die Aufgabenstellung erneut aufschreiben (einfach dort, wo Sie gerade schreiben). [@Scheuermann2016, 78]  
+
+### Fokussprint {-}
+
+**In diesem Textfeld können Sie Ihren Fokussprint durchführen. Bitte beachten Sie, dass Ihr Text nicht gespeichert wird. Also dann: 3, 2, 1 – schreiben Sie in eigenen Worten los!**
+
+<textarea id="focussprint-textarea" name=“focussprint-textarea” rows="4" cols="50"></textarea> 
+
+&nbsp;
+
+Im zweiten Schritt erfolgt die Auswertung. Lesen Sie Ihren Fokussprint durch und markieren Sie, was Ihnen wichtig erscheint. Können Sie Zwischenschritte identifizieren? Wenn ja, markieren Sie diese und fügen Ergänzungen, Kommentare oder Fragen hinzu. [vgl. @Scheuermann2016, 78]
+
+::: {.callout-tip collapse="true"}
+# Zwischenschritte identifizieren
+
+Zwischenschritte teilen eine komplexe Aufgabenstellung in überschaubare Arbeitspakete auf, die jeweils eine bestimmte Funktion im Programmablauf erfüllen (z. B. das Sortieren von Daten) oder ein bestimmtes Arbeitsergebnis erzeugen (z. B. eine Grafik). Ein Zwischenschritt ist also ein Unterprogramm und bei der Bildung von Zwischenschritten geht es somit darum, eine Aufgabenstellung in Teilaufgaben aufzuteilen und eine Vorstellung davon zu gewinnen, welche Arbeitsschritte in einem  Unterprogramm ausgeführt werden müssen, um die Teilaufgabe zu lösen.
+
+Die Bildung von Zwischenschritten dient vor allem der Komplexitätsreduktion. Ein zur Lösung einer abgegrenzten Teilaufgabe entwickeltes Unterprogramm hat zum einen den Vorteil, dass es leicht getestet werden kann, um Fehler zu finden und zu beheben. Zum anderen kann ein Unterprogramm wiederholt im Programmablauf aufgerufen werden, z. B. um die Lösung einer anderen, komplexeren Teilaufgabe zu vereinfachen.
+
+Bei der Abgrenzung von Zwischenschritten können auch andere Kriterien als die erbrachte Funktion oder das produzierte Arbeitsergebnis sinnvoll sein, etwa nach dem Ort der Datenverarbeitung (z. B. an der Messstelle, am Arbeitsrechner, im Rechenzentrum) oder nach den verwendeten Werkzeugen (z. B. Mikrocontroller, Python, C++, manuelle Datenverarbeitung).
+
+:::: {.callout-tip collapse="true"}
+# Mögliche Zwischenschritte für die Übungsaufgaben
+
+Hefezopf backen
+
+  * Unterteilung nach Funktion: Vorbereiten der Zutaten, Verarbeiten der Zutaten, Backen
+
+  * Unterteilung nach Arbeitsergebnissen: Milchmischung zubereiten, Hefemischung zubereiten, Rohteig zubereiten, Teigzopf formen, Zopf backen
+
+Vitamin C bei Meerschweinchen
+
+  * Unterteilung nach Funktion: Teildatensätze bilden, 
+  Datensatz auswerten, Datensatz darstellen, Flussdiagramm erstellen
+
+  * Unterteilung nach Arbeitsergebnis: tabellierter Mittelwertvergleich, Boxplot für alle Teilgruppen, Mermaid Flussdiagramm
+
+::::
+:::
+
+Das **EVA-Prinzip** hilft Ihnen, Zwischenschritte vollständig zu beschreiben. Das EVA-Prinzip ist ein Grundmuster der computergestützten Datenverarbeitung und steht für **E**ingabe, **V**erarbeitung und **A**usgabe. Diese Schritte folgen aufeinander: Zuerst werden die Daten erfasst, dann erfolgt die Datenverarbeitung, zuletzt werden die Ergebnisse ausgegeben. 
+
+* Eingabe: Welche Daten liegen als Eingabe vor? Welches Format haben die Daten?
+
+* Verarbeitung: Welche Arbeitsschritte müssen durchgeführt werden, um die beschriebene Ausgabe zu erreichen?
+
+* Ausgabe: Welches Ergebnis soll durch die Datenverarbeitung erzeugt werden? Welches Format hat die Ausgabe?
+
+Fassen Sie zum Abschluss Ihren Fokussprint in einem Kernsatz zusammen, der das für Sie Wichtigste hervorhebt. Dies kann eine Feststellung, aber auch eine offene Frage, die Sie weiter verfolgen möchten, sein. Markieren Sie diesen Kernsatz zusätzlich. [@Scheuermann2016, 79] 
+
+Damit haben Sie den ersten Schritt zur Formulierung einer vollständigen Programmbeschreibung geschafft! Wenn Sie möchten, können Sie Ihre Gedanken zu einer noch offenen Frage oder zu einem Zwischenschritt mit einem erneuten Fokussprint vertiefen. Andernfalls folgt nun der nächste Schritt.
+
+## Programmbeschreibung in Pseudocode
+Sie haben nun eine Vorstellung von Ihrem Lösungsweg, den Zwischenschritten, aus denen dieser besteht, und von ihrer Abfolge. Im zweiten Schritt wird Ihr Programm durch die Beschreibung mit Pseudocode formalisiert. Dazu werden Programmanweisungen zwar alltagssprachlich, aber im Stil und mit Begriffen der Programmierung formuliert. Dies bedeutet, ...
+
+1. für Programmanweisungen sprechende Namen zu vergeben. In der Datenanalyse benutzte Anweisungen sind:
+
+    * Daten importieren (import), z. B. HoleDatenVonOrt
+
+    * Daten organisieren (tidy), z. B. SortiereAufsteigend
+
+    * Daten transformieren (transform), z. B. BildeDurchschnitt
+
+    * Daten visualisieren (visualise), z. B. ErzeugeHistogramm
+
+    * Daten modellieren (model), z. B. ErzeugeLinearesModell
+
+    * Daten exportieren (export), z. B. SpeicherePlot
+
+    [vgl. @R-for-Data-Science, Kapitel Whole game]
+
+2. den Programmablauf zu dokumentieren, indem
+
+    * aufeinanderfolgende Programmanweisungen untereinandergeschrieben,
+    
+    * Blöcke von Programmanweisungen durch Einrückung und/oder Einklammerung kenntlich gemacht und
+  
+    * zusammenhängende Programmanweisungen in abgegrenzten Zwischenschritten gruppiert werden.
+
+3. Programmanweisungen von erläuternden Teilen durch Kommentare zu trennen, indem
+
+    * Kommentare durch Sonderzeichen gekennzeichnet, beispielsweise `// Kommentar`, `# Kommentar`, `%% Kommentar` oder `/* Kommentar */`, und
+
+    * einzelnen Arbeitsschritten vorangestellt (z. B. Kurzbeschreibung von Zwischenschritten nach EVA) und/oder innerhalb einer Zeile benutzt werden.
+
+4. Komplexe Programmanweisungen mit informatischen Begriffen auszudrücken, ggf. in Anlehnung an die Begriffe und Syntax der von Ihnen gewählten Programmiersprache. Dies umfasst:
+
+    **Fallunterscheidungen:** Fallunterscheidungen machen die Ausführung von Programmanweisungen abhängig von einer oder von mehreren Bedingungen.
+
+      * WENN A (kleiner, kleiner gleich, genau gleich, größer als, größer gleich, ungleich) B, DANN C, SONST D
+
+      * WENN A B1 UND B2, DANN C
+
+      * WENN A B1 ODER B2, DANN C
+
+    **Schleifen:** Schleifen wiederholen Programmanweisungen solange die Eintrittsbedingung gilt bzw. die Abbruchbedingung eintritt.
+
+      * SOLANGE A, TUE C
+      
+      * VON A BIS B, TUE C  
+
+    **Funktionen:** Funktionen bündeln Programmanweisungen, damit Programmteile mehrfach verwendet werden können. Funktionen sind eine Form von Unterprogrammen.
+
+      * FunktionTueXY(Argument 1, Argument 2, ...)  
+        Anweisung1  
+        Anweisung2  
+        ...
+
+::: {#nte-beispiel-pseudocode .callout-note collapse="true"}
+# Programmbeschreibung in Pseudocode
+
+*Hinweis: Die manuelle Erhöhung der Zählindizes ist bei Programmiersprachen in der Regel nicht erforderlich und dient nur der besseren Verständlichkeit*.
+
+
+```
+# Eingabe: eindimensionaler, ordinaler Datensatz
+# Verarbeitung: Prüfung ob Datensatz mindestens zwei Werte enthält
+## falls nein: Fehlermeldung
+## falls ja: aufsteigende Sortierung mit Bubblesort mit Kontrollstruktur für den äußeren Schleifendurchlauf
+# Ausgabe: aufsteigend sortierter Datensatz
+
+  SortiereAufsteigend(Datensatz)
+    WENN LängeDatensatz > 1 DANN
+
+      # äußere Schleife
+      do_work = WAHR # Kontrollstruktur für die äußere Schleife
+      WENN do_work == WAHR DANN
+
+        VON Datensatz[IndexA = 1] BIS Datensatz [IndexA = LängeDatensatz - 1] TUE
+          do_work = FALSCH
+
+          # innere Schleife für paarweise Vergleiche
+          VON Datensatz[IndexB = 1] BIS Datensatz [IndexB = LängeDatensatz - 1] TUE
+            WENN Datensatz[IndexB] > Datensatz[IndexB + 1] DANN
+              Vertausche(Datensatz[IndexB], Datensatz[IndexB + 1])
+                Schreibe(Datensatz[IndexB], nach = Zwischenlager)
+                Schreibe(Datensatz[IndexB + 1], nach = Datensatz[IndexB])
+                Schreibe(Zwischenlager, nach = Datensatz[IndexB + 1])
+              do_work = WAHR # merke, wenn etwas vertauscht wurde
+            WENN IndexB < LängeDatensatz - 1 DANN
+              Erhöhe IndexB
+          
+          WENN IndexA < LängeDatensatz - 1 DANN
+            Erhöhe IndexA
+
+      AusgabeDatensatz
+    SONST
+      Melde("Der Datensatz muss mindenstens zwei Elemente enthalten!")
+
+```
+:::
+
+Mit der Formalisierung Ihres Programms in Pseudocode haben Sie eine intuitiv verständliche, vollständige Programmbeschreibung entwickelt. Im nächsten Schritt können Sie Ihr Programm grafisch darstellen.
+
+&nbsp;
+
+::: {.panel-tabset}
+
+## Übungsaufgabe zählen
+**Beschreiben Sie ein Programm, das von 1-10 und von 15 bis 20 zählt, in Pseudocode.**
+
+In diesem Textfeld können Sie Ihren Pseudocode schreiben. Bitte beachten Sie, dass Ihr Text nicht gespeichert wird.
+
+<textarea id="exercise-area2" name=“exercise-area2” rows="4" cols="50"></textarea> 
+
+## Musterlösung Pseudocode
+
+```
+i = 0
+SOLANGE i kleiner als 10 TUE
+  erhöhe i um 1
+  Ausgabe i
+i = 14
+SOLANGE i kleiner als 20 TUE
+  erhöhe i um 1
+  Ausgabe i
+```
+
+:::
+
+### Karel The Robot
+Wenn Sie die Anwendung informatischer Konzepte wie Fallunterscheidung oder Schleifen üben möchten, ist [Karel The Robot](https://github.com/fredoverflow/karel) einen Blick wert. Das Programm führt mit einer eigenen Pseudocode-Sprache in die Anwendung informatischer Kontrollstrukturen ein.
+
+Eine Vorstellung des Programms, Hinweise zur Installation und Bedienung finden Sie auf der im vorherigen Absatz verlinkten GitHub-Seite oder auf dem YouTube-Kanal der Medienberatung Niedersachsen:
+
+::: {.border}
+{{< video https://www.youtube.com/watch?v=vD8RN_WbvLo >}}
+
+Programmieren lernen mit Karel von Medienberatung Niedersachsen ist lizensiert unter [CC-BY]( https://creativecommons.org/licenses/by/4.0/). Das Werk ist abrufbar auf [YouTube](https://www.youtube.com/watch?v=vD8RN_WbvLo).
+:::
+
+
+## Programmablauf visualisieren
+![&nbsp;](skript/00-bilder/woman-speaker.png){fig-alt="Eine Person spricht durch ein Sprachrohr" width="50%"}
+
+::: {.border}
+Lead 1 von CocoMaterial ist lizensiert unter [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Das Werk ist abrufbar auf [CocoMaterial](https://cocomaterial.com/results?q=megaphone&vectorId=65).
+:::
+
+&nbsp;
+
+Eine anschauliche grafische Darstellung verhilft Pseudocode zu noch mehr Klarheit und unterstützt dadurch insbesondere den Austausch mit Dritten. Die grafische Darstellung eines Programms wird Programmablaufplan oder Flussdiagramm genannt. Die für einen Programmablaufplan verwendeten Symbole sind in der [@DIN-66001-1983] genormt. Die Formen werden auch als Knoten (nodes) bezeichnet, die Verbindungen als Kanten (edges).
+
+::: {layout="[30, 70]"}
+
+```{mermaid}
+flowchart TD
+  A([Start / Stopp])
+```
+
+Rechteck mit gerundeten Seiten (Nummer 6.4.1)
+: Grenzstelle zur Umwelt, die Beginn und Ende einer Folge anzeigt und beispielsweise Herkunft oder Verbleib von Daten signalisiert.
+
+```{mermaid}
+flowchart TD
+  A[Verarbeitung]
+```
+
+Rechteck (Nummer 6.1.1)
+: Verarbeitung einschließlich Ein-/Ausgabe
+
+```{mermaid}
+flowchart TD
+  A{Entscheidung}
+  B[Anweisung 1]
+  C[Anweisung 2]
+
+  A -->|wahr| B
+  A -->|falsch| C
+```
+
+Raute (Nummer 6.1.2)
+: Verzweigung/Entscheidung
+
+```{mermaid}
+flowchart TD
+  subgraph Unterprogramm [Kaffee kochen]
+   B[Filter einsetzen] --- C[Pulver einfüllen] --- D[Wasser einfüllen] --- E[Kaffeemaschine einschalten]
+  end
+
+  A[[Kaffee kochen]]
+
+A ~~~ Unterprogramm
+%% A ~~~ Unterprogramm = unsichtbare Verbindung zur Positionssteuerung
+```
+
+Rechteck mit doppelten, vertikalen Linien (Nummer 7.2.4)
+: Hinweis auf ein an anderer Stelle dokumentiertes Programm
+
+```{mermaid}
+flowchart TD
+  ID0([Beginn Kaffeepause]) --- A 
+  A{durstig} -->|ja|C[[Kaffee kochen]] --- D[Kaffee trinken]
+  A          -->|nein|E[warten]
+  D --- Z
+  E ---- Z
+  Z([Kaffepause Ende])
+
+%% Kommentar: die Anzahl der Striche steuert die Position einer Zelle
+```
+
+Verbindung (Nummer 6.3.1)
+: Prozessketten werden mit Linien oder Pfeilen verbunden. Die Verbindungen sind von links nach rechts bzw. von oben nach unten orientiert, Abweichungen davon müssen mit Pfeilspitzen gekenzeichnet werden. 
+: Sind mehrere Ausgänge mit Bedingungen verknüpft, müssen diese durch Beschriftung an den Verbindungslinien kenntlich gemacht werden.
+: Mehrere Verbindungen zu einem Sinnbild können zu einer Verbindung zusammengeführt werden. Sich kreuzende Verbindungslinien sollten aber vermieden werden. Diese stellen keine Zusammenführung dar. **Anmerkung: Mermaid (und auch Graphviz) scheinen diese Funktion nicht zu beherrschen**
+
+:::
+
+[@DIN-66001-1983]
+
+::: {#wrn-DIN66001 .callout-warning appearance="simple" collapse="true"}
+# Hinweis zur Darstellung von Daten nach DIN 66001
+Die DIN 66001 definiert auch Sinnbilder zur Darstellung von Daten. Die Norm regelt aber für Programmablaufpläne: "Daten werden nicht dargestellt. Siehe Beispiel in Abschnitt A.2." [@DIN-66001-1983, S. 2]. Gleichwohl sind im Beispiel A.2 spezfische Typen von Daten dargestellt, beispielsweise manuell oder maschinell zu verarbeitende Daten [@DIN-66001-1983, S. 13-14].
+
+Jedoch sind die in den Nummern 6.2.2 bis 6.2.10 definierten Sinnbilder für spezifische Datentypen nicht in allen Diagrammwerkzeugen vollständig verfügbar. Dies betrifft:
+
+  * [Graphviz](https://graphviz.org/doc/info/shapes.html) (z. B. maschinell zu verarbeitende Daten entsprechend Nummer 6.2.2)
+
+  * [Mermaid](https://mermaid.js.org/syntax/flowchart.html#node-shapes) (z. B. maschinell zu verarbeitende Daten entsprechend Nummer 6.2.2)
+
+  * Bürosoftwarepaket LibreOffice (z. B. manuell zu verarbeitende Daten entsprechend Nummer 6.2.3)
+
+In der Darstellung von Programmablaufplänen ist die Verwendung des Sinnbilds Nr. 6.2.1 Daten allgemein üblich.
+
+
+:::: {layout="[30, 70]"}
+
+
+![&nbsp;](skript/00-bilder/din-daten-allgemein.svg)  
+
+Daten (Nummer 6.2.1)
+: Darstellung für Daten oder Datenträger allgemein
+
+::::
+
+*Hinweis: Aus technischen Gründen handelt es sich um eine gerenderte Grafik (Quarto issue #9677).*
+
+:::
+
+### Werkzeuge zur Erstellung von Flussdiagrammen {-}
+Flussdiagramme können auf unterschiedliche Weise erstellt werden:
+
+  * mit Stift und Papier,
+
+  * mit Bürosoftwarepaketen wie LibreOffice,
+
+  * Visualisierungsprogrammen wie [Graphviz](https://graphviz.org/) oder [Mermaid](https://mermaid.js.org/),
+
+  * mit spezialisierten Paketen wie [DiagrammeR](https://cran.r-project.org/web/packages/DiagrammeR/index.html) oder [Schemdraw](https://schemdraw.readthedocs.io/en/latest/elements/flow.html).
+
+Der Funktionsumfang und die Syntax unterscheiden sich und jedes Werkzeug hat eigene Stärken. Mermaid, Graphviz und Schemdraw sind deklarative Zeichenwerkzeuge, mit denen Flussdiagramme (und andere Grafiken) geschrieben und graphisch umgesetzt werden können. Mermaid hat eine einfache, intuitive Syntax. Graphviz erlaubt mehr Gestaltungsmöglichkeiten (benötigt in Python aber eine lokale Systeminstallation). Das Python-Modul Schemdraw unterstützt eine an Pythoncode angelehnte Syntax und bietet einen einfachen Zugriff auf DIN-konforme Knoten und Kanten.
+
+::: {#nte-flowcharts .callout-note collapse="true" title="Flussdiagramme in Python und R erstellen"}
+
+:::: {.panel-tabset}
+
+## Codebeispiel Python
+
+```{raw}
+# Flussdiagramm mit Schemdraw und Graphviz in Python
+
+## Schemdraw
+import subprocess
+subprocess.call(['pip', 'install', 'schemdraw'])
+import schemdraw
+
+from schemdraw.flow import *
+
+with schemdraw.Drawing() as d:
+    # durchgehender Prozess in korrekter Reihenfolge von Start bis Ende
+    d+= Start().label("Mittagspause")
+    d+= Line().down()
+    d+= Box().label("Kartoffeln abzählen")
+    d+= Line().down()
+    d+= (mit_Schale := Decision(S = "Ja", E = "Nein").label("Mit Schale?"))
+    d+= Arrow().at(mit_Schale.S)
+    d+= (kochen := Box().label("Kartoffeln kochen"))
+    d+= Line().down()
+    d+= Box().label("Kartoffeln essen")
+    d+= Line().down()
+    d+= Start().label("Pause Ende")
+
+    # alternativer Ast der Verzweigung
+    d+= Arrow().right().at(mit_Schale.E)
+    d+= (schälen := Box().label("Kartoffeln schälen"))
+    d+= Wire("|-", arrow = "->").at(schälen.S).to(kochen.E) # .S + .E (oder andere Richtungsangaben) müssen gesetzt werden, |- definiert zunächst vertikale, rechtwinkelige Kante
+    
+     d.draw()
+    # d.save("Kartoffeln.svg")
+
+## Graphviz
+## benötigt eine lokale Installation von Graphviz https://graphviz.org/download/
+
+import subprocess
+subprocess.call(['pip', 'install', 'graphviz']) # installiert das Modul graphviz
+import graphviz
+
+dot = graphviz.Digraph(name = "Kartoffeln")
+
+### Start / Ende
+dot.node(name = "Mittagspause", shape = "Mrecord") # optional label
+dot.node(name = "Pause Ende", shape = "Mrecord")
+
+### Anweisungen
+dot.node(name = "Kartoffeln abzählen", shape = "box")
+dot.node(name = "Kartoffeln schälen", shape = "box")
+dot.node(name = "Kartoffeln kochen", shape = "box")
+dot.node(name = "Kartoffeln essen", shape = "box")
+
+### Entscheidung
+dot.node(name = "mit Schale", shape = "diamond")
+    
+### Kanten
+dot.edge("Mittagspause", "Kartoffeln abzählen", arrowhead = "none")
+dot.edge("Kartoffeln abzählen", "mit Schale", arrowhead = "none")
+dot.edge("mit Schale", "Kartoffeln kochen", label = "Ja")
+dot.edge("mit Schale", "Kartoffeln schälen", label = "nein")
+dot.edge("Kartoffeln schälen", "Kartoffeln kochen", arrowhead = "none")
+dot.edge("Kartoffeln kochen", "Kartoffeln essen", arrowhead = "none")
+dot.edge("Kartoffeln essen", "Pause Ende", arrowhead = "none")
+
+dot.render("Kartoffeln.gv", cleanup = True, view = True)
+
+```
+
+## Schemdraw in Python
+
+```{python}
+#| echo: false
+#| output: false
+
+import subprocess
+subprocess.call(['pip', 'install', 'schemdraw'])
+```
+
+```{python}
+#| echo: false
+#| label: python-schemdraw
+#| fig-cap: "Flussdiagramm mit Schemdraw"
+#| fig-alt: "Ein Flussdiagramm mit Schemdraw, um zur Mittagspause Kartoffeln mit oder ohne Schale zu kochen."
+
+import schemdraw
+from schemdraw.flow import *
+
+with schemdraw.Drawing(show = True) as d:
+    # durchgehender Prozess in korrekter Reihenfolge von Start bis Ende
+    d+= Start().label("Mittagspause")
+    d+= Line().down()
+    d+= Box().label("Kartoffeln abzählen")
+    d+= Line().down()
+    d+= (mit_Schale := Decision(S = "Ja", E = "Nein").label("Mit Schale?")) # S = South, E = East
+    d+= Arrow().at(mit_Schale.S)
+    d+= (kochen := Box().label("Kartoffeln kochen"))
+    d+= Line().down()
+    d+= Box().label("Kartoffeln essen")
+    d+= Line().down()
+    d+= Start().label("Pause Ende")
+
+    # alternativer Ast der Verzweigung
+    d+= Arrow().right().at(mit_Schale.E)
+    d+= (schälen := Box().label("Kartoffeln schälen"))
+    d+= Wire("|-", arrow = "->").at(schälen.S).to(kochen.E) # .S + .E (oder andere Richtungsangaben) müssen gesetzt werden, |- definiert zunächst vertikale, rechtwinkelige Kante
+ 
+    d.draw();
+    # d.save("Kartoffeln.svg")
+``` 
+
+## Codebeispiel R
+
+```
+# Flussdiagramm mit DiagrammeR in R
+
+install.packages("DiagrammeR")
+library("DiagrammeR")
+
+## Mermaid
+DiagrammeR::mermaid("
+  graph TD
+    0(Mittagspause)
+    A[Kartoffeln abzählen]
+    B{mit Schale}
+    D[Kartoffeln kochen]
+    E[Kartoffeln essen]
+    S[Kartoffeln schälen]
+    Z(Pause Ende)
+    
+    0---A
+    A---B
+    B-->|ja|D
+    B-->|nein|S
+    S---D
+    D---E
+    E---Z
+")
+
+## Graphviz
+DiagrammeR::grViz("
+
+  graph Kartoffeln {
+  
+  # defining nodes
+  node [shape = Mrecord]
+  
+    Mittagspause; Pause_Ende
+  
+  node [shape = box]
+  
+    Kartoffeln_abzählen
+    Kartoffeln_schälen
+    Kartoffeln_kochen
+    Kartoffeln_essen
+    
+  node[shape = diamond]
+  
+    mit_Schale
+    
+  # defining edges
+    Mittagspause -- Kartoffeln_abzählen
+    Kartoffeln_abzählen -- mit_Schale
+      mit_Schale -- Kartoffeln_kochen[dir = forward label=ja]
+      mit_Schale -- Kartoffeln_schälen[dir = forward label=nein]
+        Kartoffeln_schälen -- Kartoffeln_kochen
+    Kartoffeln_kochen -- Kartoffeln_essen
+    Kartoffeln_essen -- Pause_Ende
+  }
+")
+```
+
+## Mermaid in R
+<!-- Der Mermaid-Code läuft in Quarto, aber nicht im HTML (lässt Mermaid Engine abstürzen). HTML-Kommentare werden vom Mermaid-Code aufgelöst. Deshalb Einbinden als Grafik. https://github.com/quarto-dev/quarto-cli/issues/9693 -->
+
+<!-- .svg fails to render with arrow heads -->
+
+![&nbsp;](skript/00-bilder/mermaid-in-r.png)
+
+*Hinweis: Aus technischen Gründen handelt es sich um eine gerenderte Grafik (Quarto issue #9693).*
+::::
+
+:::
+&nbsp;
+
+::: {.panel-tabset}
+
+## Übungsaufgabe zählen
+**Erstellen Sie ein Flussdiagramm für ein Programm, das von 1-10 und von 15 bis 20 zählt.**
+
+## Musterlösung Pseudocode
+
+```
+i = 0
+SOLANGE i kleiner als 10 TUE
+  erhöhe i um 1
+  Ausgabe i
+i = 14
+SOLANGE i kleiner als 20 TUE
+  erhöhe i um 1
+  Ausgabe i
+```
+
+## Musterlösung Mermaid
+
+```{.raw}
+---
+title: Zähle von 1-10 und von 15-20
+---
+flowchart TD
+Start([Start])
+initialisieren1[i = 0]
+initialisieren2[i = 14]
+Schleife1{i kleiner 10}
+Schleife2{i kleiner 20}
+Erhöhe1[i = i + 1]
+Erhöhe2[i = i + 1]
+Ausgabe1[Gebe i aus]
+Ausgabe2[Gebe i aus]
+Ende([Ende])
+
+Start --- initialisieren1
+initialisieren1 --- Schleife1
+    
+    Schleife1 -->|nein| initialisieren2 --- Schleife2
+        Schleife2 -->|ja| Erhöhe2 --- Ausgabe2 --> Schleife2
+        Schleife2 -->|nein| Ende
+
+    Schleife1 -->|ja| Erhöhe1 --- Ausgabe1 --> Schleife1
+
+%% unsichtbare Verbindungen zur Positionssteuerung
+    Ausgabe1 ~~~ Schleife2
+    Ausgabe2 ~~~ Ende
+
+```
+
+## Musterlösung Flussdiagramm
+
+<!-- .svg fails to render with arrow heads -->
+
+![Flussdiagramm mit DiagrammeR in R](aufgaben/00-bilder/musterloesung-flussdiagramm.png){fig-alt="Das Flussdiagramm zum Mermaid-Code aus dem vorherigen Panel."}
+
+*Hinweis: Aus technischen Gründen handelt es sich um eine gerenderte Grafik (Quarto issue #9693).*
+
+:::
+
+# Musterlösungen
+
+:::{.callout-tip collapse="true"}
+## Hefezopf backen
+Für die Zubereitung des Hefezopfes werden mindestens drei Stunden benötigt. Der Teig (bzw. die Hefemischung) muss verteilt über mehrere Schritte insgesamt 120 Minuten gehen und nach dem Backen auskühlen. Aufgrund der langen Wartezeiten können die Arbeitsschritte von einer Person durchgeführt werden, eine parallele Bearbeitung durch eine zweite Person spart nur wenig Zeit ein. Lisa darf natürlich trotzdem eine Stunde früher vorbei kommen, aber dann ruht der Teig zum letzten Mal, bäckt im Ofen oder kühlt bereits aus. Zutaten mitbringen muss sie nicht, die Zutatenliste ist vollständig.
+
+```
+# Zwischenschritt 1 - ca. 25 Minuten
+## Eingabe: 250 ml Milch, 475 g Weizenmehl, 1 Prise Zucker, ½ Würfel Hefe
+## Werkzeug: Schüssel, Sieb, Topf, Löffel, Geschirrtuch  
+## Verarbeitung: Hefe in gezuckerter Milch lösen
+## Ausgabe: Hefemischung, Mehl
+
+BereiteHefemischung
+  MehlSieben # benutze Sieb
+  MehlHinzufügen        
+  MuldeBilden # Mulde im Mehl bilden  
+  HefeZerbröseln  
+  HefeHinzufügen  
+  MilchVorbereiten # benutze Topf
+    **Solange** Milch < lauwarm **Tue**  
+      MilchErwärmen  
+    ZuckerHinzufügen
+    Verrühren # Milch und Zucker mit Löffel vermischen  
+  MilchHinzufügen  
+  Verrühren # Hefe und Milchmischung mit Löffel vermischen  
+  TeigGeht(Zeit = 15 Minuten)  
+    SchüsselAbdecken # benutze Geschirrtuch  
+    WarmStellen
+
+# Zwischenschritt 2 - ca. 75 Minuten
+## Eingabe: Hefemischung, Mehl, 1 Ei, 60 g Zucker, 1 Prise Salz, 50 g Butter  
+## Werkzeug: Schüssel, Rührgerät, Messer, Geschirrtuch
+## Verarbeitung: Ei, Milch, Salz, Butter hinzugeben und verkneten  
+## Ausgabe: Rohteig
+    
+BereiteTeig  
+  ButterWürfeln # benutze Messer  
+    # Ausgabe: n Butterwürfel
+  **SOLANGE** TeigGeht **TUE**
+    Warten  
+  EiHinzufügen  
+  MilchHinzufügen  
+  ZuckerHinzufügen  
+  SalzHinzufügen  
+  Kneten(Zeit = 3 Min, Stufe = niedrig) # benutze Rührhaken  
+  Kneten(Zeit = 5 Min, Stufe = hoch) # benutze Rührhaken  
+  ButterHinzufügen  
+    **SOLANGE** n > 0 **TUE**  
+      Kneten(Stufe = hoch)  
+      ButterwürfelHinzufügen  
+      n = n - 1
+    Kneten(Zeit = 5 Min, Stufe = hoch) # benutze Rührhaken
+  TeigGeht(Zeit = 60 Minuten)  
+    SchüsselAbdecken # benutze Geschirrtuch  
+    WarmStellen
+
+# Zwischenschritt 3 - ca. 55 Minuten
+## Eingabe: Rohteig, etwas Mehl
+## Verarbeitung: Rohteig zu Teigzopf verarbeiten
+## Werkzeug: Blech, Backpapier, Geschirrtuch
+## Ausgabe: Teigzopf
+
+ZopfFormen  
+  BackpapierAufBlechLegen  
+  ArbeitsflächeBemehlen  
+  TeigAufArbeitsflächeLegen  
+  TeigTeilen(Stücke = 3)  
+    # Ausgabe = n Teigstücke  
+  TeigRollen  
+    **SOLANGE** n > 0 **TUE**  
+      TeigstückRollen(Länge = 40 cm)  
+      n = n - 1  
+  ZopfErzeugen  
+    RollenFlechten  
+    EndenVerdrehen  
+  ZopfAufBackpapierLegen  
+  TeigGeht(Zeit = 45 Minuten)  
+    ZopfAbdecken # benutze Geschirrtuch 
+    WarmStellen  
+
+# Zwischenschritt 4 - ca. 40 Minuten
+## Eingabe: Teigzopf, etwas Milch, etwas Hagelzucker
+## Werkzeug: Pinsel, Ofen
+## Verarbeitung: Zopf bestreichen, bestreuen und backen
+## Ausgabe: Hefezopf (gebacken)
+
+ZopfBacken  
+  OfenVorheizen  
+    **WENN** UmluftVerfügbar **DANN**   
+      Modus = Umluft  
+      Temperatur = 180 Grad  
+    **SONST**  
+      Modus = Ober- / Unterhitze  
+      Temperatur = 200 Grad  
+  ZopfMitMilchBestreichen # benutze Pinsel
+  ZopfMitHagelzuckerBestreuen
+  ZopfBacken
+    BlechInOfenStellen
+    **SOLANGE** Zopf < leicht bräunlich **TUE**
+      BlechImOfenLassen
+    BlechHerausholen
+  ZopfAuskühlen
+    **SOLANGE** Zopf > Zimmertemperatur **TUE**
+      Warten
+
+```
+:::
+
+:::{.callout-tip collapse="true"}
+## Vitamin C bei Meerschweinchen
+
+```
+# Schritt 1 – Datensatz einlesen
+## Eingabe: URL
+## Werkzeug: Browser
+## Verarbeitung: Speichern der Rohdaten
+## Ausgabe: kommaseparierte Datei ToothGrowth.csv
+
+HoleDatensatzVonURL
+DatensatzSpeichern
+
+# Schritt 2 – Mittelwertvergleich
+## Eingabe: ToothGrowth.csv
+## Werkzeug: IDE
+## Verarbeitung: Mittelwerte für Teildatensätze bilden
+## Ausgabe: Tabelle der Mittelwerte nach Dosis und Verabreichungsmethode
+
+ZeilennummernBestimmen
+  Zeilennummern(supp = OJ)
+  Zeilennummern(supp = VC)
+  Zeilennummern(dose = 0.5)
+  Zeilennummern(dose = 1)
+  Zeilennummern(dose = 2)
+TeildatensätzeBilden # über Kriterium oder über Zeilennummern
+	TeildatensatzSupp = OJ
+		TeildatensatzDose = 0.5
+		TeildatensatzDose = 1
+		TeildatensatzDose = 2
+	TeildatensatzSupp = VC
+		TeildatensatzDose = 0.5
+		TeildatensatzDose = 1
+		TeildatensatzDose = 2
+MittelwerteErmitteln
+	MittelwertLen(Datensatz)
+	MittelwerteTeildatensätze
+		MittelwertLen(TeildatensatzSupp = OJ & Dose = 0.5)
+		MittelwertLen(TeildatensatzSupp = OJ & Dose = 1)
+		MittelwertLen(TeildatensatzSupp = OJ & Dose = 2)
+		MittelwertLen(TeildatensatzSupp = VC & Dose = 0.5)
+		MittelwertLen(TeildatensatzSupp = VC & Dose = 1)
+		MittelwertLen(TeildatensatzSupp = VC & Dose = 2)
+TabelleErstellen
+	Spalten = OJ, VC
+	Zeilen = Dosis
+	Zellen = MittelwerteLen
+TabelleAusgeben
+
+# Schritt 3 – graphische Darstellung
+## Eingabe: ToothGrowth.csv
+## Werkzeug: Funktion für Boxplot
+## Verarbeitung: Boxplot nach Dosis und Methode erzeugen
+## Ausgabe: Boxplots nach Dosis und Verabreichungsmethode
+
+Boxplot(Len nach Dosis & Methode)
+	BoxplotErstellen
+	VerabreichungsmethodeFarblichUnterscheiden
+	LegendeEintragen
+SpeichereBoxplot
+```
+
+:::
+
+# Das Wichtigste
+
+*Platzhalter für ein Video.*
+
+
+# Lernzielkontrolle
+
+## Kompetenzquiz
+
+## Übungsaufgaben
+
+### Börsenstrategie entwickeln
+Sie möchten den möglichen Ertrag einer Turnaround-Strategie an der Börse bewerten. Ihre Idee besteht darin, einen Aktienindex zu kaufen, wenn dieser mindestens 30 Prozent vom Allzeithoch der letzten drei Jahre gefallen ist. Sie spekulieren mit Ihrer Strategie darauf, dass sich der Aktienindex wieder erholt und Sie durch den günstigen Einstieg eine bessere Rendite als bei regelmäßigen, kursunabhängigen Zukäufen erzielen. Der Vergleichszeitraum beträgt 30 Jahre (Beginn und Ende können Sie selbst festlegen).
+
+**Testen Sie Ihre Strategie anhand des S&P500.**
+
+Parameter: 5.000 Dollar Startkapital, über 30 Jahre monatlich zusätzlich 500 Dollar investierbares Kapital, Dividenden werden im Folgemonat reinvestiert bzw. bis zum nächsten Kursrückgang angespart, Strategie: Buy & Hold (keine Verkäufe), Kurseinbruch: 30 Prozent gegenüber Allzeithoch der letzten 3 Jahre. 
+
+  * Optional: In wie vielen 30-Jahresperioden wäre Ihre Turnaround-Strategie besser gewesen als stetiges Zukaufen?
+
+  * Optional: Wie verändert sich das Verhältnis, wenn der Schwellenwert für den Kurseinbruch verändert wird (20 oder 40 Prozent)?
+
+Ein Datensatz des S&P500 mit Monatsdaten von 1871 bis 2024 ist auf der Webseite von [Robert Shiller](https://shillerdata.com/) verfügbar ([Direktlink zur XLS-Datei](https://img1.wsimg.com/blobby/go/e5e77e0b-59d1-44d9-ab25-4763ac982e53/downloads/ie_data.xls?ver=1712069253887)).
+
+::: {.callout-note collapse="true"}
+# Datensatzbeschreibung S&P500
+Der Datensatz liegt in monatlicher Auflösung (**Date**) vor. Neben dem Kurs (**Price**) sind die ausgeschütteten Dividenden (**Dividend**) festgehalten.  
+*Hinweis: Der Datensatz liegt als Exceldatei vor und wurde aus Gründen der Übersichtlichkeit leicht bearbeitet (Anpassung der Spaltennamen, Formatierung Spalte Date, Runden der Spalten Price und Dividend). Bitte beachten Sie, dass wenn Sie den Datensatz selbst abrufen, das Erscheinungsbild entsprechend abweicht.* 
+
+| # | Date | Price | Dividend |
+|---|---|---|---|
+| 1 | 1871.01 | 4.44 | 0.26 |
+| 2 | 1871.02 | 4.50 | 0.26 |
+| 3 | 1871.03 | 4.61 | 0.26 |
+| 4 | 1871.04 | 4.74 | 0.26 |
+| 5 | 1871.05 | 4.86 | 0.26 |
+| 6 | 1871.06 | 4.82 | 0.26 |
+| 7 | 1871.07 | 4.73 | 0.26 |
+| 8 | 1871.08 | 4.79 | 0.26 |
+| 9 | 1871.09 | 4.84 | 0.26 |
+| 10 | 1871.10 | 4.59 | 0.26 |
+| 11 | 1871.11 | 4.64 | 0.26 |
+| 12 | 1871.12 | 4.74 | 0.26 |
+| 1828 | 2023.04 | 4121.47 | 68.38 |
+| 1829 | 2023.05 | 4146.17 | 68.54 |
+| 1830 | 2023.06 | 4345.37 | 68.71 |
+| 1831 | 2023.07 | 4508.08 | 68.91 |
+| 1832 | 2023.08 | 4457.36 | 69.11 |
+| 1833 | 2023.09 | 4409.09 | 69.31 |
+| 1834 | 2023.10 | 4269.40 | 69.64 |
+| 1835 | 2023.11 | 4460.06 | 69.97 |
+| 1836 | 2023.12 | 4685.05 | 70.30 |
+| 1837 | 2024.01 | 4815.61 | 70.48 |
+| 1838 | 2024.02 | 5011.96 | 70.65 |
+| 1839 | 2024.03 | 5170.57 | 70.82 |
+
+:::
+
