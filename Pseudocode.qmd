@@ -1,27 +1,36 @@
 ---
-title: "Bausteine Computergestützter Datenanalyse"
-subtitle: "01 Pseudocode"
-author: "Maik Poetzsch"
+# Metadaten / meta data
+title: "Anwendungsbaustein Pseudocode"
+author:
+  - Lukas Arnold
+  - Simone Arnold
+  - Florian Bagemihl
+  - Matthias Baitsch
+  - Marc Fehr
+  - Maik Poetzsch
+  - Sebastian Seipel
 date: today # "2024-03-05" Jahr-Monat-Tag / year-month-day
+
+## Spracheinstellungen / language settings
+lang: de
+# crossref: 
+  # nte-title: Beispiel -- so nicht :(
+  # nte-prefix: Beispiel -- so nicht :(
 
 # Dokumenteneinstellungen / document options
 engine: knitr # jupyter kann den CSS-Code für Blocksatz nicht verarbeiten
 mermaid: 
   theme: neutral # default hat zu dunkle subgraphs
 
-## Spracheinstellungen / language settings
-lang: de
-
 ## Formatoption / formating options
 format:
   html:
-    self-contained: true # erzeugt eine all in one HTML-Datei
     default-image-extension: svg
     code-copy: true # hover is default
   pdf:
     cite-method: biblatex
     biblio-title: Quellen
-    default-image-extension: png # Vektorgrafiken werden als PDF eingebunden / vector grafics are embedded as PDF
+    default-image-extension: pdf # Vektorgrafiken werden als PDF eingebunden / vector grafics are embedded as PDF
 
 ## Inhaltsverzeichnis / table of contents
 toc: true
@@ -61,9 +70,14 @@ p {
 :::: {layout="[20, 80]"}
 ![](skript/00-bilder/CC-BY) <!-- Grafik ohne Titel und Dateiendung einbinden -->  
 
-Bausteine Computergestützter Datenanalyse. 01 Pseudocode von Maik Poetzsch ist lizensiert unter [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de). Das Werk ist abrufbar auf [GitHub](https://github.com/bausteine-der-datenanalyse). Ausgenommen von der Lizenz sind alle Logos und anders gekennzeichneten Inhalte. 2024
+Bausteine Computergestützter Datenanalyse von Lukas Arnold, Simone Arnold, Florian Bagemihl, Matthias Baitsch, Marc Fehr, Maik Poetzsch und Sebastian Seipel. Werkzeugbaustein Pseudocode von Maik Poetzsch ist lizensiert unter [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de). Das Werk ist abrufbar auf [GitHub](https://github.com/bausteine-der-datenanalyse). Ausgenommen von der Lizenz sind alle Logos und anders gekennzeichneten Inhalte. 2024
 
 ::::
+
+Zitiervorschlag
+
+Arnold, Lukas, Simone Arnold, Matthias Baitsch, Marc Fehr, Maik Poetzsch, und Sebastian Seipel. 2024. „Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Pseudocode“. <https://github.com/bausteine-der-datenanalyse/w-pseudocode>.
+
 :::
 
 {{< pagebreak >}}
@@ -105,7 +119,7 @@ Pseudocode ist darüber hinaus auch ein Kommunikationsmittel, um sich mit andere
 :::
 
 ### Pseudocode von einfach bis ausführlich
-In welcher Form und wie detailliert Sie Pseudocode formulieren, ist abhängig von Ihrem Kenntnisstand und Ihrem Ziel: Für die Strukturierung Ihres Programms in aufeinanderfolgende Zwischenschritte und die Identifizierung von Abhängigkeiten ist eine einfache Auflistung von Arbeitsschritten ausreichend. Für die Identifizierung von benötigten Methoden (z. B. Schleifen) und Werkzeugen (z. B. spezialisierte Pakete) wird es erforderlich sein, Programmanweisungen detailierter zu beschreiben. Eine ausführliche Darstellung hilft Ihnen zum Beispiel, wiederkehrende Arbeitsschritte zu identifizieren, die in eine Funktion ausgelagert werden können. Für die Präsentation Ihres Programms auf einer Fachtagung oder die Dokumentation in einem Benutzer:innenhandbuch kann ein Flussdiagramm zweckmäßig sein.
+In welcher Form und wie detailliert Sie Pseudocode formulieren, ist abhängig von Ihrem Kenntnisstand und Ihrem Ziel: Für die Strukturierung Ihres Programms in aufeinanderfolgende Zwischenschritte und die Identifizierung von Abhängigkeiten ist eine einfache Auflistung von Arbeitsschritten ausreichend. Für die Entwicklung eines Algorithmus sowie die Identifizierung von benötigten Methoden (z. B. Schleifen) und Werkzeugen (z. B. spezialisierte Pakete) wird es erforderlich sein, Programmanweisungen detaillierter zu beschreiben. Eine ausführliche Darstellung hilft Ihnen zum Beispiel, wiederkehrende Arbeitsschritte zu identifizieren, die in eine Funktion ausgelagert werden können. Für die Präsentation Ihres Programms auf einer Fachtagung oder die Dokumentation in einem Benutzer:innenhandbuch kann ein Flussdiagramm zweckmäßig sein.
 
 ::: {.panel-tabset}
 
@@ -178,24 +192,17 @@ Das im Folgenden vorgestellte Schema unterstützt Sie dabei, Ideen zu entwickeln
 *	sich mit Dritten über Ihr Programm auszutauschen.
 
 ## Übungsaufgaben
-Für die Bearbeitung dieses Bausteins stehen **drei** Übungsaufgaben zur Auswahl. Die Übungsaufgaben sprechen Studierende mit unterschiedlichen Vorkenntnissen an und verdeutlichen Teilaspekte der Programmentwicklung.
-
+Für die Bearbeitung dieses Bausteins stehen zwei Übungsaufgaben zur Auswahl. Die Übungsaufgaben sprechen auch Studierende ohne Vorkenntnisse in der Datenanalyse an und verdeutlichen Teilaspekte der Programmentwicklung. Am besten eignet sich jedoch ein eigenes Projekt, das Sie bearbeiten möchten. Dazu haben Sie im Reiter "Eigenes Projekt" die Möglichkeit, eine eigene Aufgabenstellung zu formulieren.
 
 ::: {.panel-tabset}
+
 ## Übersicht
 
-* Einfach: Hefezopf backen  
+* ohne Vorkenntnisse Datenanalyse: Hefezopf backen  
 Lernziele: Aufgabenstellung in aufeinanderfolgende Arbeitsschritte untergliedern, Arbeitsschritte vollständig beschreiben, Abhängigkeiten und Voraussetzungen identifizieren (benötigte Werkzeuge identifizieren, Zeitaufwand schätzen)  
 
-* Mittel: Vitamin C bei Meerschweinchen  
+* mit Vorkenntnissen Datenanalyse: Vitamin C bei Meerschweinchen  
 Lernziele: Datenanalyse in Pseudocode beschreiben.  
-**Entspricht nicht den formulierten Lernzielen. Zu simpel?!**
-
-* Schwer: Börsenstrategie entwickeln  
-Lernziele: Eine komplexe Aufgabe mit Pseudocode strukturieren.  
-**TO DO: Musterlösung entwickeln / als Übungsaufgabe in Kapitel 5 hinterlegen.**
-
-Am besten eignet sich jedoch ein eigenes Projekt, das Sie bearbeiten möchten. Dazu haben Sie im Reiter "Eigenes Projekt" die Möglichkeit, eine eigene Aufgabenstellung zu formulieren.
 
 ## Eigenes Projekt
 Hier können Sie die Aufgabenstellung bzw. das Ziel Ihres Projekts festhalten. Bitte beachten Sie, dass Ihr Text nicht gespeichert wird.
@@ -347,7 +354,7 @@ Fassen Sie zum Abschluss Ihren Fokussprint in einem Kernsatz zusammen, der das f
 Damit haben Sie den ersten Schritt zur Formulierung einer vollständigen Programmbeschreibung geschafft! Wenn Sie möchten, können Sie Ihre Gedanken zu einer noch offenen Frage oder zu einem Zwischenschritt mit einem erneuten Fokussprint vertiefen. Andernfalls folgt nun der nächste Schritt.
 
 ## Programmbeschreibung in Pseudocode
-Sie haben nun eine Vorstellung von Ihrem Lösungsweg, den Zwischenschritten, aus denen dieser besteht, und von ihrer Abfolge. Im zweiten Schritt wird Ihr Programm durch die Beschreibung mit Pseudocode formalisiert. Dazu werden Programmanweisungen zwar alltagssprachlich, aber im Stil und mit Begriffen der Programmierung formuliert. Dies bedeutet, ...
+Sie haben nun eine Vorstellung von Ihrem Lösungsweg, den Zwischenschritten, aus denen dieser besteht, und von ihrer Abfolge. Im zweiten Schritt wird Ihr Programm durch die Beschreibung mit Pseudocode formalisiert. Dazu werden Programmanweisungen zwar alltagssprachlich, aber im Stil und mit Begriffen der Programmierung formuliert. Dies bedeutet,
 
 1. für Programmanweisungen sprechende Namen zu vergeben. In der Datenanalyse benutzte Anweisungen sind:
 
@@ -402,11 +409,8 @@ Sie haben nun eine Vorstellung von Ihrem Lösungsweg, den Zwischenschritten, aus
         Anweisung2  
         ...
 
-::: {#nte-beispiel-pseudocode .callout-note collapse="true"}
+::: {#wrn-beispiel-pseudocode .callout-warning appearance="simple" collapse="true"}
 # Programmbeschreibung in Pseudocode
-
-*Hinweis: Die manuelle Erhöhung der Zählindizes ist bei Programmiersprachen in der Regel nicht erforderlich und dient nur der besseren Verständlichkeit*.
-
 
 ```
 # Eingabe: eindimensionaler, ordinaler Datensatz
@@ -444,6 +448,9 @@ Sie haben nun eine Vorstellung von Ihrem Lösungsweg, den Zwischenschritten, aus
       Melde("Der Datensatz muss mindenstens zwei Elemente enthalten!")
 
 ```
+
+*Hinweis: Die manuelle Erhöhung der Zählindizes ist bei Programmiersprachen in der Regel nicht erforderlich und dient nur der besseren Verständlichkeit*.
+
 :::
 
 Mit der Formalisierung Ihres Programms in Pseudocode haben Sie eine intuitiv verständliche, vollständige Programmbeschreibung entwickelt. Im nächsten Schritt können Sie Ihr Programm grafisch darstellen.
@@ -482,7 +489,7 @@ Eine Vorstellung des Programms, Hinweise zur Installation und Bedienung finden S
 ::: {.border}
 {{< video https://www.youtube.com/watch?v=vD8RN_WbvLo >}}
 
-Programmieren lernen mit Karel von Medienberatung Niedersachsen ist lizensiert unter [CC-BY]( https://creativecommons.org/licenses/by/4.0/). Das Werk ist abrufbar auf [YouTube](https://www.youtube.com/watch?v=vD8RN_WbvLo).
+Programmieren lernen mit Karel von Medienberatung Niedersachsen ist lizensiert unter [CC-BY]( https://creativecommons.org/licenses/by/4.0/). Das Werk ist abrufbar auf [YouTube](https://www.youtube.com/watch?v=vD8RN_WbvLo). 2022
 :::
 
 
@@ -589,7 +596,7 @@ Daten (Nummer 6.2.1)
 
 ::::
 
-*Hinweis: Aus technischen Gründen handelt es sich um eine gerenderte Grafik (Quarto issue #9677).*
+<!-- Hinweis: Aus technischen Gründen handelt es sich um eine gerenderte Grafik (Quarto issue #9677). -->
 
 :::
 
@@ -789,7 +796,7 @@ DiagrammeR::grViz("
 
 ![&nbsp;](skript/00-bilder/mermaid-in-r.png)
 
-*Hinweis: Aus technischen Gründen handelt es sich um eine gerenderte Grafik (Quarto issue #9693).*
+<!-- Hinweis: Aus technischen Gründen handelt es sich um eine gerenderte Grafik (Quarto issue #9693). -->
 ::::
 
 :::
@@ -852,7 +859,7 @@ initialisieren1 --- Schleife1
 
 ![Flussdiagramm mit DiagrammeR in R](aufgaben/00-bilder/musterloesung-flussdiagramm.png){fig-alt="Das Flussdiagramm zum Mermaid-Code aus dem vorherigen Panel."}
 
-*Hinweis: Aus technischen Gründen handelt es sich um eine gerenderte Grafik (Quarto issue #9693).*
+<!-- Hinweis: Aus technischen Gründen handelt es sich um eine gerenderte Grafik (Quarto issue #9693). -->
 
 :::
 
@@ -1030,15 +1037,80 @@ SpeichereBoxplot
 :::
 
 # Das Wichtigste
+In welcher Form und wie detailliert Sie Pseudocode formulieren, hängt von Ihrem Kenntnisstand und Ihrem Ziel ab. Die Entwicklung von Pseudocode kann als Kreativitätstechnik ohne formale Vorgaben eingesetzt werden, in detaillierter Form bei der Ausarbeitung einer algorithmischen Lösung helfen oder visuell in Form eines Flussdiagramms Ihre Kommunikation mit Dritten unterstützen.
 
-*Platzhalter für ein Video.*
+# Kompetenzquiz
+
+(@) Schreiben Sie ein Programm in Pseudocode, das alle geraden Zahlen bis 10 ausgibt.
+
+<textarea id=“quiz-1 name=quiz-1” rows="4" cols="50"></textarea>
+
+&nbsp;
+
+(@) Fehler im Pseudocode finden.
+
+Ein:e Freund:in zeigt Ihnen den Pseudocode eines Programms, das prüfen soll, ob Buchstaben groß oder klein geschrieben sind. Die Ausgabe klappt aber nur für klein geschriebene Buchstaben. Finden Sie den Fehler?
+
+```{raw}
+
+text = Eingabe("Bitte geben Sie Ihren Text ein.")
+zeichen_liste = TeileZeichenweiseInListeAuf(text)
+
+FÜR JEDES element IN zeichen_liste TUE
+
+  Wenn Dezimalwert(element) >= 97 UND Dezimalwert(element) <= 122 TUE
+    Schreibe("Das Zeichen ", element, "ist klein geschrieben.")
+
+    Wenn Dezimalwert(element) >= 65 UND Dezimalwert(element) <= 90 TUE
+      Schreibe("Das Zeichen ", element, "ist groß geschrieben.")
+
+```
+
+&nbsp;
+
+(@) Zeichnen Sie ein Flussdiagramm des korrekten Programms. Einen Live-Editor für Mermaid finden Sie hier: <https://mermaid.live/>
 
 
-# Lernzielkontrolle
+::: {#tip-Kompetenzquiz .callout-tip title="Lösungen" collapse="true"}
 
-## Kompetenzquiz
+Lösung 1:
 
-## Übungsaufgaben
+```{raw}
+i = 1 
+SOLANGE i kleiner gleich 10
+  WENN i Modulo 2 gleich 0 TUE
+    Ausgabe i
+  Erhöhe i um 1
+```
+
+Lösung 2: Die Prüfung der Bedingungen für groß geschriebenen Buchstaben (Dezimalwert(element) >= 65 UND Dezimalwert(element) <= 90) erfolgt im Anweisungsblock, wenn ein Buchstabe klein geschrieben ist (Dezimalwert(element) >= 97 UND Dezimalwert(element) <= 122 ). Der Wahrheitswert dieser Bedingung ist falsch, wenn ein Buchstabe groß geschrieben ist. Die folgenden Anweisungen werden deshalb nicht ausgeführt, wenn element einen Großbuchstaben enthält. Durch korrektes Einrücken kann das Problem gelöst werden.
+
+```{raw}
+
+text = Eingabe("Bitte geben Sie Ihren Text ein.")
+zeichen_liste = TeileZeichenweiseInListeAuf(text)
+
+FÜR JEDES element IN zeichen_liste TUE
+
+  Wenn Dezimalwert(element) >= 97 UND Dezimalwert(element) <= 122 TUE
+    Schreibe("Das Zeichen ", element, "ist klein geschrieben.")
+
+  # korrigierte Einrückung
+  Wenn Dezimalwert(element) >= 65 UND Dezimalwert(element) <= 90 TUE
+    Schreibe("Das Zeichen ", element, "ist groß geschrieben.")
+
+```
+
+Lösung 3:
+
+:::: {#tip-Kompetenzquiz-flussdiagramm .callout-tip title="Mermaid Diagramm" collapse="true"}
+
+![](skript/00-bilder/mermaid-diagram-buchstaben.svg){width="80%" fig-alt="Ein Flussdiagramm für den in Lösung 2 gezeigten Pseudocode."}
+::::
+
+:::
+
+# Übungen
 
 ### Börsenstrategie entwickeln
 Sie möchten den möglichen Ertrag einer Turnaround-Strategie an der Börse bewerten. Ihre Idee besteht darin, einen Aktienindex zu kaufen, wenn dieser mindestens 30 Prozent vom Allzeithoch der letzten drei Jahre gefallen ist. Sie spekulieren mit Ihrer Strategie darauf, dass sich der Aktienindex wieder erholt und Sie durch den günstigen Einstieg eine bessere Rendite als bei regelmäßigen, kursunabhängigen Zukäufen erzielen. Der Vergleichszeitraum beträgt 30 Jahre (Beginn und Ende können Sie selbst festlegen).
@@ -1051,7 +1123,7 @@ Parameter: 5.000 Dollar Startkapital, über 30 Jahre monatlich zusätzlich 500 D
 
   * Optional: Wie verändert sich das Verhältnis, wenn der Schwellenwert für den Kurseinbruch verändert wird (20 oder 40 Prozent)?
 
-Ein Datensatz des S&P500 mit Monatsdaten von 1871 bis 2024 ist auf der Webseite von [Robert Shiller](https://shillerdata.com/) verfügbar ([Direktlink zur XLS-Datei](https://img1.wsimg.com/blobby/go/e5e77e0b-59d1-44d9-ab25-4763ac982e53/downloads/ie_data.xls?ver=1712069253887)).
+Ein Datensatz des S&P500 mit Monatsdaten von 1871 bis 2024 ist auf der [Webseite](https://shillerdata.com/) von Robert Shiller verfügbar ([Direktlink zur XLS-Datei](https://img1.wsimg.com/blobby/go/e5e77e0b-59d1-44d9-ab25-4763ac982e53/downloads/ie_data.xls?ver=1712069253887)).
 
 ::: {.callout-note collapse="true"}
 # Datensatzbeschreibung S&P500
