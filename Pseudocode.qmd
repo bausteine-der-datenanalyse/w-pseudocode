@@ -1,6 +1,6 @@
 ---
 # Metadaten / meta data
-title: "Anwendungsbaustein Pseudocode"
+title: "Werkzeugbaustein Pseudocode"
 author:
   - Lukas Arnold
   - Simone Arnold
@@ -13,10 +13,19 @@ date: today # "2024-03-05" Jahr-Monat-Tag / year-month-day
 
 ## Spracheinstellungen / language settings
 lang: de
-# crossref: 
-  # nte-title: Beispiel -- so nicht :(
-  # nte-prefix: Beispiel -- so nicht :(
-
+language:
+  de:
+    crossref-imp-title: "Definition"
+    crossref-imp-prefix: "Definition"
+    crossref-lst-title: "Code-Block"
+    crossref-lst-prefix: "Code-Block"
+    crossref-nte-title: "Beispiel"
+    crossref-nte-prefix: "Beispiel"
+    crossref-tip-title: "Tipp"
+    crossref-tip-prefix: "Tipp"
+    crossref-wrn-title: "Hinweis"
+    crossref-wrn-prefix: "Hinweis"
+    
 # Dokumenteneinstellungen / document options
 engine: knitr # jupyter kann den CSS-Code für Blocksatz nicht verarbeiten
 mermaid: 
@@ -112,8 +121,8 @@ Pseudocode beschreibt ein Programm und informatische Konzepte in einer leicht ve
 
 Pseudocode ist auch ein Instrument, um sich mit Dritten über ein Programm auszutauschen, zum Beispiel um ein Problem im Code zu erörtern. Denn Pseudocode setzt keine Kenntnis einer bestimmten Programmiersprache voraus und ist intuitiv verständlich. Zur Unterstützung der Kommunikationsfunktion von Pseudocode kann dieser zum Beispiel als Flussdiagramm visualisiert werden.
 
-:::{.callout-important}
-## Definition Pseudocode
+:::{#imp-Pseudocode .callout-important}
+## Pseudocode
 Pseudocode beschreibt einen Lösungsweg für informatische Aufgabenstellungen in formalisierter Alltagssprache statt mit den Ausdrücken und der Syntax einer Programmiersprache. Das Präfix pseudo stammt aus dem Griechischen und bedeutet falsch oder nur so aussehen als ob. Pseudocode ist ‚falscher‘ Programmcode, der mit natürlicher Sprache gebildet wird. [@Pseudocode-was-ist]
 Pseudocode ist darüber hinaus auch ein Kommunikationsmittel, um sich mit anderen über informatische Probleme und deren Lösung auszutauschen (z. B. Kommiliton:innen, Betreuer:innen).
 :::
@@ -313,7 +322,7 @@ Der Fokussprint wird in zwei Schritten durchgeführt: Der erste Schritt besteht 
 
 Im zweiten Schritt erfolgt die Auswertung. Lesen Sie Ihren Fokussprint durch und markieren Sie, was Ihnen wichtig erscheint. Können Sie Zwischenschritte identifizieren? Wenn ja, markieren Sie diese und fügen Ergänzungen, Kommentare oder Fragen hinzu. [vgl. @Scheuermann2016, 78]
 
-::: {.callout-tip collapse="true"}
+::: {#tip-Zwischenschritte .callout-tip collapse="true"}
 # Zwischenschritte identifizieren
 
 Zwischenschritte teilen eine komplexe Aufgabenstellung in überschaubare Arbeitspakete auf, die jeweils eine bestimmte Funktion im Programmablauf erfüllen (z. B. das Sortieren von Daten) oder ein bestimmtes Arbeitsergebnis erzeugen (z. B. eine Grafik). Ein Zwischenschritt ist also ein Unterprogramm und bei der Bildung von Zwischenschritten geht es somit darum, eine Aufgabenstellung in Teilaufgaben aufzuteilen und eine Vorstellung davon zu gewinnen, welche Arbeitsschritte in einem  Unterprogramm ausgeführt werden müssen, um die Teilaufgabe zu lösen.
@@ -322,7 +331,7 @@ Die Bildung von Zwischenschritten dient vor allem der Komplexitätsreduktion. Ei
 
 Bei der Abgrenzung von Zwischenschritten können auch andere Kriterien als die erbrachte Funktion oder das produzierte Arbeitsergebnis sinnvoll sein, etwa nach dem Ort der Datenverarbeitung (z. B. an der Messstelle, am Arbeitsrechner, im Rechenzentrum) oder nach den verwendeten Werkzeugen (z. B. Mikrocontroller, Python, C++, manuelle Datenverarbeitung).
 
-:::: {.callout-tip collapse="true"}
+:::: {#tip-Übungsaufgaben .callout-tip collapse="true"}
 # Mögliche Zwischenschritte für die Übungsaufgaben
 
 Hefezopf backen
@@ -409,7 +418,7 @@ Sie haben nun eine Vorstellung von Ihrem Lösungsweg, den Zwischenschritten, aus
         Anweisung2  
         ...
 
-::: {#wrn-beispiel-pseudocode .callout-warning appearance="simple" collapse="true"}
+::: {#nte-beispiel-pseudocode .callout-note collapse="true"}
 # Programmbeschreibung in Pseudocode
 
 ```
@@ -572,7 +581,7 @@ Verbindung (Nummer 6.3.1)
 [@DIN-66001-1983]
 
 ::: {#wrn-DIN66001 .callout-warning appearance="simple" collapse="true"}
-# Hinweis zur Darstellung von Daten nach DIN 66001
+# Darstellung von Daten nach DIN 66001
 Die DIN 66001 definiert auch Sinnbilder zur Darstellung von Daten. Die Norm regelt aber für Programmablaufpläne: "Daten werden nicht dargestellt. Siehe Beispiel in Abschnitt A.2." [@DIN-66001-1983, S. 2]. Gleichwohl sind im Beispiel A.2 spezfische Typen von Daten dargestellt, beispielsweise manuell oder maschinell zu verarbeitende Daten [@DIN-66001-1983, S. 13-14].
 
 Jedoch sind die in den Nummern 6.2.2 bis 6.2.10 definierten Sinnbilder für spezifische Datentypen nicht in allen Diagrammwerkzeugen vollständig verfügbar. Dies betrifft:
@@ -865,7 +874,7 @@ initialisieren1 --- Schleife1
 
 # Musterlösungen
 
-:::{.callout-tip collapse="true"}
+:::{#tip-Hefezopf .callout-tip collapse="true"}
 ## Hefezopf backen
 Für die Zubereitung des Hefezopfes werden mindestens drei Stunden benötigt. Der Teig (bzw. die Hefemischung) muss verteilt über mehrere Schritte insgesamt 120 Minuten gehen und nach dem Backen auskühlen. Aufgrund der langen Wartezeiten können die Arbeitsschritte von einer Person durchgeführt werden, eine parallele Bearbeitung durch eine zweite Person spart nur wenig Zeit ein. Lisa darf natürlich trotzdem eine Stunde früher vorbei kommen, aber dann ruht der Teig zum letzten Mal, bäckt im Ofen oder kühlt bereits aus. Zutaten mitbringen muss sie nicht, die Zutatenliste ist vollständig.
 
@@ -972,7 +981,7 @@ ZopfBacken
 ```
 :::
 
-:::{.callout-tip collapse="true"}
+:::{#tip-Meerschweinchen .callout-tip collapse="true"}
 ## Vitamin C bei Meerschweinchen
 
 ```
@@ -1068,8 +1077,7 @@ FÜR JEDES element IN zeichen_liste TUE
 
 &nbsp;
 
-(@) Zeichnen Sie ein Flussdiagramm des korrekten Programms. Einen Live-Editor für Mermaid finden Sie hier: <https://mermaid.live/>
-
+(@) Zeichnen Sie ein Flussdiagramm des korrekten Programms.
 
 ::: {#tip-Kompetenzquiz .callout-tip title="Lösungen" collapse="true"}
 
@@ -1125,7 +1133,7 @@ Parameter: 5.000 Dollar Startkapital, über 30 Jahre monatlich zusätzlich 500 D
 
 Ein Datensatz des S&P500 mit Monatsdaten von 1871 bis 2024 ist auf der [Webseite](https://shillerdata.com/) von Robert Shiller verfügbar ([Direktlink zur XLS-Datei](https://img1.wsimg.com/blobby/go/e5e77e0b-59d1-44d9-ab25-4763ac982e53/downloads/ie_data.xls?ver=1712069253887)).
 
-::: {.callout-note collapse="true"}
+::: {#wrn-SP500 .callout-warning appearance="simple" collapse="true"}
 # Datensatzbeschreibung S&P500
 Der Datensatz liegt in monatlicher Auflösung (**Date**) vor. Neben dem Kurs (**Price**) sind die ausgeschütteten Dividenden (**Dividend**) festgehalten.  
 *Hinweis: Der Datensatz liegt als Exceldatei vor und wurde aus Gründen der Übersichtlichkeit leicht bearbeitet (Anpassung der Spaltennamen, Formatierung Spalte Date, Runden der Spalten Price und Dividend). Bitte beachten Sie, dass wenn Sie den Datensatz selbst abrufen, das Erscheinungsbild entsprechend abweicht.* 

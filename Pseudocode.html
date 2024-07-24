@@ -14,7 +14,7 @@
 <meta name="author" content="Maik Poetzsch">
 <meta name="author" content="Sebastian Seipel">
 
-<title>Anwendungsbaustein Pseudocode</title>
+<title>Werkzeugbaustein Pseudocode</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -112,7 +112,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Anwendungsbaustein Pseudocode</h1>
+<h1 class="title">Werkzeugbaustein Pseudocode</h1>
 </div>
 
 
@@ -135,7 +135,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">23. Juli 2024</p>
+      <p class="date">24. Juli 2024</p>
     </div>
   </div>
   
@@ -205,7 +205,7 @@ p {
 <h1 data-number="3"><span class="header-section-number">3</span> Was ist Pseudocode?</h1>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src=".\skript/00-bilder/festmahl-PCL.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p><img src="/skript/00-bilder/festmahl-PCL.png" class="img-fluid figure-img" style="width:50.0%"></p>
 <figcaption>&nbsp;</figcaption>
 </figure>
 </div>
@@ -222,13 +222,13 @@ p {
 <p>Kurz: Sie brauchen einen eigenen Plan – nicht nur beim Kochen, sondern auch bei der computergestützten Datenanalyse. Denn auch die Datenanalyse erfolgt selten linear. Stattdessen wechseln sich Schritte zur Organisation, Visualisierung, Auswertung und Weiterverarbeitung von Daten ab. Dazu steht eine Vielzahl unterschiedlicher Programme mit eigener Syntax zur Auswahl. Oder ist eine selbst geschriebene Funktion besser geeignet? Häufig liegen Daten in unterschiedlichen Formaten vor und müssen für die Verwendung spezialisierter Programme transformiert werden. Dies sind typische Herausforderungen der Datenanalyse, die durch eine gute Planung aufgefangen werden können. Bei der Planung hilft Ihnen Pseudocode.</p>
 <p>Pseudocode beschreibt ein Programm und informatische Konzepte in einer leicht verständlichen, alltäglichen Sprache. Die Entwicklung von Pseudocode kann sowohl als Kreativitätstechnik als auch als Schablone zur strukturierten Lösung von Aufgabenstellungen genutzt werden. Pseudocode erlaubt es, sich zunächst auf die konzeptionelle Lösung einer Aufgabenstellung und die Planung des Programmaufbaus zu fokussieren. Dies kann sinnvoll sein, um durch die Unterteilung des Programms in Zwischenschritte die Entwicklung zu vereinfachen, benötigte Programme, Pakete und Methoden zu identifizieren oder den Arbeitsaufwand abzuschätzen.</p>
 <p>Pseudocode ist auch ein Instrument, um sich mit Dritten über ein Programm auszutauschen, zum Beispiel um ein Problem im Code zu erörtern. Denn Pseudocode setzt keine Kenntnis einer bestimmten Programmiersprache voraus und ist intuitiv verständlich. Zur Unterstützung der Kommunikationsfunktion von Pseudocode kann dieser zum Beispiel als Flussdiagramm visualisiert werden.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<div id="imp-Pseudocode" class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition Pseudocode
+Definition&nbsp;1: Pseudocode
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -471,13 +471,13 @@ Backen 25 Min.</p>
 <textarea id="focussprint-textarea" name="“focussprint-textarea”" rows="4" cols="50"></textarea>
 <p>&nbsp;</p>
 <p>Im zweiten Schritt erfolgt die Auswertung. Lesen Sie Ihren Fokussprint durch und markieren Sie, was Ihnen wichtig erscheint. Können Sie Zwischenschritte identifizieren? Wenn ja, markieren Sie diese und fügen Ergänzungen, Kommentare oder Fragen hinzu. <span class="citation" data-cites="Scheuermann2016">(vgl. <a href="#ref-Scheuermann2016" role="doc-biblioref">Scheuermann 2016, 78</a>)</span></p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div id="tip-Zwischenschritte" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Zwischenschritte identifizieren
+Tipp&nbsp;2: Zwischenschritte identifizieren
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -486,13 +486,13 @@ Zwischenschritte identifizieren
 <p>Zwischenschritte teilen eine komplexe Aufgabenstellung in überschaubare Arbeitspakete auf, die jeweils eine bestimmte Funktion im Programmablauf erfüllen (z. B. das Sortieren von Daten) oder ein bestimmtes Arbeitsergebnis erzeugen (z. B. eine Grafik). Ein Zwischenschritt ist also ein Unterprogramm und bei der Bildung von Zwischenschritten geht es somit darum, eine Aufgabenstellung in Teilaufgaben aufzuteilen und eine Vorstellung davon zu gewinnen, welche Arbeitsschritte in einem Unterprogramm ausgeführt werden müssen, um die Teilaufgabe zu lösen.</p>
 <p>Die Bildung von Zwischenschritten dient vor allem der Komplexitätsreduktion. Ein zur Lösung einer abgegrenzten Teilaufgabe entwickeltes Unterprogramm hat zum einen den Vorteil, dass es leicht getestet werden kann, um Fehler zu finden und zu beheben. Zum anderen kann ein Unterprogramm wiederholt im Programmablauf aufgerufen werden, z. B. um die Lösung einer anderen, komplexeren Teilaufgabe zu vereinfachen.</p>
 <p>Bei der Abgrenzung von Zwischenschritten können auch andere Kriterien als die erbrachte Funktion oder das produzierte Arbeitsergebnis sinnvoll sein, etwa nach dem Ort der Datenverarbeitung (z. B. an der Messstelle, am Arbeitsrechner, im Rechenzentrum) oder nach den verwendeten Werkzeugen (z. B. Mikrocontroller, Python, C++, manuelle Datenverarbeitung).</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div id="tip-Übungsaufgaben" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Mögliche Zwischenschritte für die Übungsaufgaben
+Tipp&nbsp;1: Mögliche Zwischenschritte für die Übungsaufgaben
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -569,13 +569,13 @@ Anweisung2<br>
 …</li>
 </ul></li>
 </ol>
-<div id="wrn-beispiel-pseudocode" class="callout callout-style-simple callout-warning callout-titled">
+<div id="nte-beispiel-pseudocode" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning&nbsp;1: Programmbeschreibung in Pseudocode
+Beispiel&nbsp;1: Programmbeschreibung in Pseudocode
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -816,7 +816,7 @@ Mehrere Verbindungen zu einem Sinnbild können zu einer Verbindung zusammengefü
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning&nbsp;2: Hinweis zur Darstellung von Daten nach DIN 66001
+Hinweis&nbsp;1: Darstellung von Daten nach DIN 66001
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -873,7 +873,7 @@ Darstellung für Daten oder Datenträger allgemein
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note&nbsp;1: Flussdiagramme in Python und R erstellen
+Beispiel&nbsp;2: Flussdiagramme in Python und R erstellen
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1100,13 +1100,13 @@ initialisieren1 --- Schleife1
 </section>
 <section id="musterlösungen" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Musterlösungen</h1>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div id="tip-Hefezopf" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hefezopf backen
+Tipp&nbsp;3: Hefezopf backen
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1215,13 +1215,13 @@ ZopfBacken
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div id="tip-Meerschweinchen" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Vitamin C bei Meerschweinchen
+Tipp&nbsp;4: Vitamin C bei Meerschweinchen
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1318,7 +1318,7 @@ FÜR JEDES element IN zeichen_liste TUE
 </div>
 <p>&nbsp;</p>
 <ol start="3" class="example" type="1">
-<li>Zeichnen Sie ein Flussdiagramm des korrekten Programms. Einen Live-Editor für Mermaid finden Sie hier: <a href="https://mermaid.live/" class="uri">https://mermaid.live/</a></li>
+<li>Zeichnen Sie ein Flussdiagramm des korrekten Programms.</li>
 </ol>
 <div id="tip-Kompetenzquiz" class="callout callout-style-default callout-tip callout-titled" title="Lösungen">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
@@ -1326,7 +1326,7 @@ FÜR JEDES element IN zeichen_liste TUE
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip&nbsp;2: Lösungen
+Tipp&nbsp;6: Lösungen
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1363,7 +1363,7 @@ FÜR JEDES element IN zeichen_liste TUE
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip&nbsp;1: Mermaid Diagramm
+Tipp&nbsp;5: Mermaid Diagramm
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1389,13 +1389,13 @@ Tip&nbsp;1: Mermaid Diagramm
 <li><p>Optional: Wie verändert sich das Verhältnis, wenn der Schwellenwert für den Kurseinbruch verändert wird (20 oder 40 Prozent)?</p></li>
 </ul>
 <p>Ein Datensatz des S&amp;P500 mit Monatsdaten von 1871 bis 2024 ist auf der <a href="https://shillerdata.com/">Webseite</a> von Robert Shiller verfügbar (<a href="https://img1.wsimg.com/blobby/go/e5e77e0b-59d1-44d9-ab25-4763ac982e53/downloads/ie_data.xls?ver=1712069253887">Direktlink zur XLS-Datei</a>).</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div id="wrn-SP500" class="callout callout-style-simple callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Datensatzbeschreibung S&amp;P500
+Hinweis&nbsp;2: Datensatzbeschreibung S&amp;P500
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
