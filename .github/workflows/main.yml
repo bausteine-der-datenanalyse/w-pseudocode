@@ -18,7 +18,7 @@ jobs:
         run: sudo apt update
       # Install additional Ubuntu packages
       - name: Install additional packages
-        run: sudo apt-get install -y librsvg2-bin libcurl4-openssl-dev libharfbuzz-dev libfribidi-dev
+        run: sudo apt-get install -y librsvg2-bin libcurl4-openssl-dev libharfbuzz-dev libfribidi-dev lynx
 
       # Checkout repository
       - name: Check out repository
@@ -61,5 +61,3 @@ jobs:
         uses: quarto-dev/quarto-actions/render@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
-        with:
-          path: output/
