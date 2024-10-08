@@ -52,7 +52,7 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           tinytex: true
-          version: 1.4.556
+          version: 1.5.57
 
       # Render HTML target to GH pages, use all issue-*.qmd files
       - name: Publish to GitHub Pages (and render) 
