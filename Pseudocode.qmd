@@ -36,11 +36,10 @@ format:
   html:
     default-image-extension: svg
     code-copy: true # hover is default
-  pdf:
-    cite-method: biblatex
-    biblio-title: Quellen
-    default-image-extension: pdf # Vektorgrafiken werden als PDF eingebunden / vector grafics are embedded as PDF
-
+##  pdf:
+ #   cite-method: biblatex
+ #   biblio-title: Quellen
+    
 ## Inhaltsverzeichnis / table of contents
 toc: true
 number-sections: true
@@ -97,7 +96,7 @@ Arnold, Lukas, Simone Arnold, Matthias Baitsch, Marc Fehr, Maik Poetzsch, und Se
 
 # Was ist Pseudocode?
 
-![&nbsp;](/skript/00-bilder/festmahl-PCL.png){fig-alt="Dekoratives Bild einer am gedeckten Tisch sitzenden Gesellschaft aus vier Personen. Ein Mann ist aufgestanden, um einen Toast auszusprechen." width="50%"}
+![](/skript/00-bilder/festmahl-PCL.svg){fig-alt="Dekoratives Bild einer am gedeckten Tisch sitzenden Gesellschaft aus vier Personen. Ein Mann ist aufgestanden, um einen Toast auszusprechen." width="50%"}
 
 ::: {.border}
 Toast Dining Eating von OpenClipart-Vectors ist lizensiert unter [Pixabay Content License](https://pixabay.com/service/license-summary/). Das Werk ist abrufbar auf [Pixabay](https://pixabay.com/vectors/toast-dining-eating-event-festive-153723/).
