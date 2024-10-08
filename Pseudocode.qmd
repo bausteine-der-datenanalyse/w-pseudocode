@@ -36,9 +36,9 @@ format:
   html:
     default-image-extension: svg
     code-copy: true # hover is default
-  pdf:
-    cite-method: biblatex
-    biblio-title: Quellen
+##  pdf:
+ #   cite-method: biblatex
+ #   biblio-title: Quellen
     
 ## Inhaltsverzeichnis / table of contents
 toc: true
