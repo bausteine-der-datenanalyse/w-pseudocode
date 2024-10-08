@@ -732,7 +732,7 @@ with schemdraw.Drawing(show = True) as d:
     d+= (schälen := Box().label("Kartoffeln schälen"))
     d+= Wire("|-", arrow = "->").at(schälen.S).to(kochen.E) # .S + .E (oder andere Richtungsangaben) müssen gesetzt werden, |- definiert zunächst vertikale, rechtwinkelige Kante
  
-    d.draw(show: False);
+    d.draw(show:False);
     # d.save("Kartoffeln.svg")
 ``` 
 
