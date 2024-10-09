@@ -713,7 +713,7 @@ subprocess.call(['pip', 'install', 'schemdraw'])
 import schemdraw
 from schemdraw.flow import *
 
-with schemdraw.Drawing(show = True) as d:
+with schemdraw.Drawing(show = False) as d:
     # durchgehender Prozess in korrekter Reihenfolge von Start bis Ende
     d+= Start().label("Mittagspause")
     d+= Line().down()
@@ -732,7 +732,7 @@ with schemdraw.Drawing(show = True) as d:
     d+= (schälen := Box().label("Kartoffeln schälen"))
     d+= Wire("|-", arrow = "->").at(schälen.S).to(kochen.E) # .S + .E (oder andere Richtungsangaben) müssen gesetzt werden, |- definiert zunächst vertikale, rechtwinkelige Kante
  
-    d.draw();
+    d.draw(show=False);
     # d.save("Kartoffeln.svg")
 ``` 
 
