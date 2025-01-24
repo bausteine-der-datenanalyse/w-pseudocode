@@ -712,6 +712,7 @@ dot.render("Kartoffeln.gv", cleanup = True, view = True)
 ## Schemdraw in Python
 
 ```{python}
+#| eval: false
 #| echo: false
 #| output: false
 
