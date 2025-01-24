@@ -642,7 +642,11 @@ Der Funktionsumfang und die Syntax unterscheiden sich und jedes Werkzeug hat eig
 
 ## Codebeispiel Python
 
-```{raw}
+```{python}
+#| eval: false
+#| echo: false
+#| output: false
+
 # Flussdiagramm mit Schemdraw und Graphviz in Python
 
 ## Schemdraw
@@ -1100,7 +1104,7 @@ FÜR JEDES element IN zeichen_liste TUE
 
 Lösung 1:
 
-```{raw}
+```
 i = 1 
 SOLANGE i kleiner gleich 10
   WENN i Modulo 2 gleich 0 TUE
@@ -1110,7 +1114,7 @@ SOLANGE i kleiner gleich 10
 
 Lösung 2: Die Prüfung der Bedingungen für groß geschriebenen Buchstaben (Dezimalwert(element) >= 65 UND Dezimalwert(element) <= 90) erfolgt im Anweisungsblock, wenn ein Buchstabe klein geschrieben ist (Dezimalwert(element) >= 97 UND Dezimalwert(element) <= 122 ). Der Wahrheitswert dieser Bedingung ist falsch, wenn ein Buchstabe groß geschrieben ist. Die folgenden Anweisungen werden deshalb nicht ausgeführt, wenn element einen Großbuchstaben enthält. Durch korrektes Einrücken kann das Problem gelöst werden.
 
-```{raw}
+```
 
 text = Eingabe("Bitte geben Sie Ihren Text ein.")
 zeichen_liste = TeileZeichenweiseInListeAuf(text)
