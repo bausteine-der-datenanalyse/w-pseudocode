@@ -34,14 +34,29 @@ mermaid:
 ## Formatoption / formating options
 format:
   html:
+    ## Logo im Browsertab
+    ### Logo in Quarto Books
+    favicon: "skript/00-bilder/favicon_bcd_new.svg"
+    
+    ### Logo in HTML
+    include-in-header:
+      text: |
+        <link rel="shortcut icon" href="skript/00-bilder/favicon_bcd_new.svg" />
+        <link rel="icon" type="image/x-icon" href="logo.ico">
+    
     default-image-extension: svg
     code-copy: true # hover is default
-##  pdf:
- #   cite-method: biblatex
- #   biblio-title: Quellen
+  pdf:
+    cite-method: biblatex
+    biblio-title: Quellen
+    default-image-extension: pdf # Vektorgrafiken werden als PDF eingebunden / vector grafics are embedded as PDF
     
 ## Inhaltsverzeichnis / table of contents
 toc: true
+toc-title:  |
+  Werkzeugbaustein Pseudocode 
+
+  ![](skript/00-bilder/logo_with_text_new.svg)
 number-sections: true
 number-depth: 2
 
@@ -99,7 +114,7 @@ Arnold, Lukas, Simone Arnold, Matthias Baitsch, Marc Fehr, Maik Poetzsch, und Se
 ![&nbsp;](skript/00-bilder/festmahl-PCL.svg){fig-alt="Dekoratives Bild einer am gedeckten Tisch sitzenden Gesellschaft aus vier Personen. Ein Mann ist aufgestanden, um einen Toast auszusprechen." width="50%"}
 
 ::: {.border}
-Toast Dining Eating von OpenClipart-Vectors ist lizensiert unter [Pixabay Content License](https://pixabay.com/service/license-summary/). Das Werk ist abrufbar auf [Pixabay](https://pixabay.com/vectors/toast-dining-eating-event-festive-153723/).
+Toast Dining Eating von OpenClipart-Vectors ist lizensiert unter [Pixabay Content License](https://pixabay.com/service/license-summary/). Das Werk ist abrufbar auf [Pixabay](https://pixabay.com/vectors/toast-dining-eating-event-festive-153723/). 2013
 :::
 
 &nbsp;
