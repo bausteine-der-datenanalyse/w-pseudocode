@@ -1077,7 +1077,7 @@ In welcher Form und wie detailliert Sie Pseudocode formulieren, hängt von Ihrem
 
 Ein:e Freund:in zeigt Ihnen den Pseudocode eines Programms, das prüfen soll, ob Buchstaben groß oder klein geschrieben sind. Die Ausgabe klappt aber nur für klein geschriebene Buchstaben. Finden Sie den Fehler?
 
-```{raw}
+```
 
 text = Eingabe("Bitte geben Sie Ihren Text ein.")
 zeichen_liste = TeileZeichenweiseInListeAuf(text)
