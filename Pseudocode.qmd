@@ -46,7 +46,10 @@ format:
     
     default-image-extension: svg
     code-copy: true # hover is default
-
+  pdf:
+    cite-method: biblatex
+    biblio-title: Quellen
+    default-image-extension: pdf # Vektorgrafiken werden als PDF eingebunden / vector grafics are embedded as PDF
     
 ## Inhaltsverzeichnis / table of contents
 toc: true
