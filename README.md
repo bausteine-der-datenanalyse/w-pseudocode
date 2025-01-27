@@ -1,4 +1,4 @@
 # w-Pseudocode
 Werkzeugbaustein Pseudocode
 
-https://bausteine-der-datenanalyse.github.io/w-pseudocode/Pseudocode.html
+https://github.com/bausteine-der-datenanalyse/w-pseudocode/blob/main/output/Pseudocode.html
