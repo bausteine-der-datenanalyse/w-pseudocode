@@ -141,7 +141,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">24. Januar 2025</p>
+      <p class="date">27. Januar 2025</p>
     </div>
   </div>
   
@@ -889,72 +889,7 @@ Beispiel&nbsp;2: Flussdiagramme in Python und R erstellen
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">Codebeispiel Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Schemdraw in Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false" href="">Codebeispiel R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-4" role="tab" aria-controls="tabset-4-4" aria-selected="false" href="">Mermaid in R</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
-<div class="cell">
-<pre class="raw cell-code"><code># Flussdiagramm mit Schemdraw und Graphviz in Python
 
-## Schemdraw
-import subprocess
-subprocess.call(['pip', 'install', 'schemdraw'])
-import schemdraw
-
-from schemdraw.flow import *
-
-with schemdraw.Drawing() as d:
-    # durchgehender Prozess in korrekter Reihenfolge von Start bis Ende
-    d+= Start().label("Mittagspause")
-    d+= Line().down()
-    d+= Box().label("Kartoffeln abzählen")
-    d+= Line().down()
-    d+= (mit_Schale := Decision(S = "Ja", E = "Nein").label("Mit Schale?"))
-    d+= Arrow().at(mit_Schale.S)
-    d+= (kochen := Box().label("Kartoffeln kochen"))
-    d+= Line().down()
-    d+= Box().label("Kartoffeln essen")
-    d+= Line().down()
-    d+= Start().label("Pause Ende")
-
-    # alternativer Ast der Verzweigung
-    d+= Arrow().right().at(mit_Schale.E)
-    d+= (schälen := Box().label("Kartoffeln schälen"))
-    d+= Wire("|-", arrow = "-&gt;").at(schälen.S).to(kochen.E) # .S + .E (oder andere Richtungsangaben) müssen gesetzt werden, |- definiert zunächst vertikale, rechtwinkelige Kante
-    
-     d.draw()
-    # d.save("Kartoffeln.svg")
-
-## Graphviz
-## benötigt eine lokale Installation von Graphviz https://graphviz.org/download/
-
-import subprocess
-subprocess.call(['pip', 'install', 'graphviz']) # installiert das Modul graphviz
-import graphviz
-
-dot = graphviz.Digraph(name = "Kartoffeln")
-
-### Start / Ende
-dot.node(name = "Mittagspause", shape = "Mrecord") # optional label
-dot.node(name = "Pause Ende", shape = "Mrecord")
-
-### Anweisungen
-dot.node(name = "Kartoffeln abzählen", shape = "box")
-dot.node(name = "Kartoffeln schälen", shape = "box")
-dot.node(name = "Kartoffeln kochen", shape = "box")
-dot.node(name = "Kartoffeln essen", shape = "box")
-
-### Entscheidung
-dot.node(name = "mit Schale", shape = "diamond")
-    
-### Kanten
-dot.edge("Mittagspause", "Kartoffeln abzählen", arrowhead = "none")
-dot.edge("Kartoffeln abzählen", "mit Schale", arrowhead = "none")
-dot.edge("mit Schale", "Kartoffeln kochen", label = "Ja")
-dot.edge("mit Schale", "Kartoffeln schälen", label = "nein")
-dot.edge("Kartoffeln schälen", "Kartoffeln kochen", arrowhead = "none")
-dot.edge("Kartoffeln kochen", "Kartoffeln essen", arrowhead = "none")
-dot.edge("Kartoffeln essen", "Pause Ende", arrowhead = "none")
-
-dot.render("Kartoffeln.gv", cleanup = True, view = True)
-</code></pre>
-</div>
 </div>
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <div class="cell">
@@ -1310,8 +1245,7 @@ SpeichereBoxplot</code></pre>
 <li>Fehler im Pseudocode finden.</li>
 </ol>
 <p>Ein:e Freund:in zeigt Ihnen den Pseudocode eines Programms, das prüfen soll, ob Buchstaben groß oder klein geschrieben sind. Die Ausgabe klappt aber nur für klein geschriebene Buchstaben. Finden Sie den Fehler?</p>
-<div class="cell">
-<pre class="raw cell-code"><code>
+<pre><code>
 text = Eingabe("Bitte geben Sie Ihren Text ein.")
 zeichen_liste = TeileZeichenweiseInListeAuf(text)
 
@@ -1323,7 +1257,6 @@ FÜR JEDES element IN zeichen_liste TUE
     Wenn Dezimalwert(element) &gt;= 65 UND Dezimalwert(element) &lt;= 90 TUE
       Schreibe("Das Zeichen ", element, "ist groß geschrieben.")
 </code></pre>
-</div>
 <p>&nbsp;</p>
 <ol start="3" class="example" type="1">
 <li>Zeichnen Sie ein Flussdiagramm des korrekten Programms.</li>
@@ -1341,16 +1274,13 @@ Tipp&nbsp;6: Lösungen
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Lösung 1:</p>
-<div class="cell">
-<pre class="raw cell-code"><code>i = 1 
+<pre><code>i = 1 
 SOLANGE i kleiner gleich 10
   WENN i Modulo 2 gleich 0 TUE
     Ausgabe i
   Erhöhe i um 1</code></pre>
-</div>
 <p>Lösung 2: Die Prüfung der Bedingungen für groß geschriebenen Buchstaben (Dezimalwert(element) &gt;= 65 UND Dezimalwert(element) &lt;= 90) erfolgt im Anweisungsblock, wenn ein Buchstabe klein geschrieben ist (Dezimalwert(element) &gt;= 97 UND Dezimalwert(element) &lt;= 122 ). Der Wahrheitswert dieser Bedingung ist falsch, wenn ein Buchstabe groß geschrieben ist. Die folgenden Anweisungen werden deshalb nicht ausgeführt, wenn element einen Großbuchstaben enthält. Durch korrektes Einrücken kann das Problem gelöst werden.</p>
-<div class="cell">
-<pre class="raw cell-code"><code>
+<pre><code>
 text = Eingabe("Bitte geben Sie Ihren Text ein.")
 zeichen_liste = TeileZeichenweiseInListeAuf(text)
 
@@ -1363,7 +1293,6 @@ FÜR JEDES element IN zeichen_liste TUE
   Wenn Dezimalwert(element) &gt;= 65 UND Dezimalwert(element) &lt;= 90 TUE
     Schreibe("Das Zeichen ", element, "ist groß geschrieben.")
 </code></pre>
-</div>
 <p>Lösung 3:</p>
 <div id="tip-Kompetenzquiz-flussdiagramm" class="callout callout-style-default callout-tip callout-titled" title="Mermaid Diagramm">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
