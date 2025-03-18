@@ -28,6 +28,7 @@ language:
     
 # Dokumenteneinstellungen / document options
 engine: knitr # jupyter kann den CSS-Code für Blocksatz nicht verarbeiten
+
 mermaid: 
   theme: neutral # default hat zu dunkle subgraphs
 
@@ -527,68 +528,37 @@ Lead 1 von CocoMaterial ist lizensiert unter [CC0 1.0](https://creativecommons.o
 
 Eine anschauliche grafische Darstellung verhilft Pseudocode zu noch mehr Klarheit und unterstützt dadurch insbesondere den Austausch mit Dritten. Die grafische Darstellung eines Programms wird Programmablaufplan oder Flussdiagramm genannt. Die für einen Programmablaufplan verwendeten Symbole sind in der [@DIN-66001-1983] genormt. Die Formen werden auch als Knoten (nodes) bezeichnet, die Verbindungen als Kanten (edges).
 
+<!-- Aus technischen Gründen handelt es sich um gerenderte Grafiken --> 
+<!-- siehe mermaid-code.txt -->
+
 ::: {layout="[30, 70]"}
 
-```{mermaid}
-flowchart TD
-  A([Start / Stopp])
-```
+![](skript/00-bilder/start-stopp.svg){fig-alt="Rechteck mit gerundeten Seiten und Beschriftung Start / Stopp"}
 
 Rechteck mit gerundeten Seiten (Nummer 6.4.1)
 : Grenzstelle zur Umwelt, die Beginn und Ende einer Folge anzeigt und beispielsweise Herkunft oder Verbleib von Daten signalisiert.
 
-```{mermaid}
-flowchart TD
-  A[Verarbeitung]
-```
+![](skript/00-bilder/verarbeitung.svg){fig-alt="Rechteck mit gerundeten Seiten und Beschriftung Verarbeitung"}
 
 Rechteck (Nummer 6.1.1)
 : Verarbeitung einschließlich Ein-/Ausgabe
 
-```{mermaid}
-flowchart TD
-  A{Entscheidung}
-  B[Anweisung 1]
-  C[Anweisung 2]
-
-  A -->|wahr| B
-  A -->|falsch| C
-```
+![](skript/00-bilder/entscheidung.svg){fig-alt="Raute, aus der zwei mit wahr und falsch beschriftete Pfeile auf zwei Rechtecke, Anweisung 1 und Anweisung 2, entspringen."}
 
 Raute (Nummer 6.1.2)
 : Verzweigung/Entscheidung
 
-```{mermaid}
-flowchart TD
-  subgraph Unterprogramm [Kaffee kochen]
-   B[Filter einsetzen] --- C[Pulver einfüllen] --- D[Wasser einfüllen] --- E[Kaffeemaschine einschalten]
-  end
-
-  A[[Kaffee kochen]]
-
-A ~~~ Unterprogramm
-%% A ~~~ Unterprogramm = unsichtbare Verbindung zur Positionssteuerung
-```
+![](skript/00-bilder/unterprogramm.svg){fig-alt="Unterprogramm Kaffee kochen bestehend aus einem Rechteck mit doppelten Seitenlinien 'Kaffee kochen' und einer umrahmten Abfolge durch Linien verbundener Rechtecke 'Filter einsetzen'-'Pulver einfüllen'-'Wasser einfüllen'-'Kaffeemaschine einschalten'. Die umrahmte Abfolge trägt den Titel Kaffee kochen."}
 
 Rechteck mit doppelten, vertikalen Linien (Nummer 7.2.4)
 : Hinweis auf ein an anderer Stelle dokumentiertes Programm
 
-```{mermaid}
-flowchart TD
-  ID0([Beginn Kaffeepause]) --- A 
-  A{durstig} -->|ja|C[[Kaffee kochen]] --- D[Kaffee trinken]
-  A          -->|nein|E[warten]
-  D --- Z
-  E ---- Z
-  Z([Kaffepause Ende])
-
-%% Kommentar: die Anzahl der Striche steuert die Position einer Zelle
-```
+![](skript/00-bilder/verbindungen.svg){fig-alt="Flussdiagramm, dass den Einsatz von beschrifteten Pfeilen und Linien unterschiedlicher Länge zeigt."}
 
 Verbindung (Nummer 6.3.1)
 : Prozessketten werden mit Linien oder Pfeilen verbunden. Die Verbindungen sind von links nach rechts bzw. von oben nach unten orientiert, Abweichungen davon müssen mit Pfeilspitzen gekenzeichnet werden. 
 : Sind mehrere Ausgänge mit Bedingungen verknüpft, müssen diese durch Beschriftung an den Verbindungslinien kenntlich gemacht werden.
-: Mehrere Verbindungen zu einem Sinnbild können zu einer Verbindung zusammengeführt werden. Sich kreuzende Verbindungslinien sollten aber vermieden werden. Diese stellen keine Zusammenführung dar. **Anmerkung: Mermaid (und auch Graphviz) scheinen diese Funktion nicht zu beherrschen**
+: Mehrere Verbindungen zu einem Sinnbild können zu einer Verbindung zusammengeführt werden. Sich kreuzende Verbindungslinien sollten aber vermieden werden. Diese stellen keine Zusammenführung dar. (*Hinweis: Für die Darstellung zusammengeführter Verbindungen wird Schemdraw empfohlen.*)
 
 :::
 
