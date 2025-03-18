@@ -18,3 +18,26 @@ flowchart TD
   A -->|falsch| C
 ```
 
+```{mermaid}
+flowchart TD
+  subgraph Unterprogramm [Kaffee kochen]
+   B[Filter einsetzen] --- C[Pulver einfüllen] --- D[Wasser einfüllen] --- E[Kaffeemaschine einschalten]
+  end
+
+  A[[Kaffee kochen]]
+
+A ~~~ Unterprogramm
+%% A ~~~ Unterprogramm = unsichtbare Verbindung zur Positionssteuerung
+```
+
+```{mermaid}
+flowchart TD
+  ID0([Beginn Kaffeepause]) --- A 
+  A{durstig} -->|ja|C[[Kaffee kochen]] --- D[Kaffee trinken]
+  A          -->|nein|E[warten]
+  D --- Z
+  E ---- Z
+  Z([Kaffepause Ende])
+
+%% Kommentar: die Anzahl der Striche steuert die Position einer Zelle
+```

@@ -1,0 +1,20 @@
+```{mermaid}
+flowchart TD
+  A([Start / Stopp])
+```
+
+```{mermaid}
+flowchart TD
+  A[Verarbeitung]
+```
+
+```{mermaid}
+flowchart TD
+  A{Entscheidung}
+  B[Anweisung 1]
+  C[Anweisung 2]
+
+  A -->|wahr| B
+  A -->|falsch| C
+```
+
