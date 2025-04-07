@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -26,6 +26,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -56,10 +90,10 @@ div.csl-indent {
 <script src="Pseudocode_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="Pseudocode_files/libs/quarto-html/anchor.min.js"></script>
 <link href="Pseudocode_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Pseudocode_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="Pseudocode_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="Pseudocode_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Pseudocode_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Pseudocode_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="Pseudocode_files/libs/bootstrap/bootstrap-10034efcbca2d6a2496bebfdf4aa2c6d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link rel="shortcut icon" href="skript/00-bilder/favicon_bcd_new.svg">
 <link rel="icon" type="image/x-icon" href="logo.ico">
 
@@ -137,7 +171,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">18. März 2025</p>
+      <p class="date">7. April 2025</p>
     </div>
   </div>
   
@@ -207,7 +241,7 @@ p {
 <h1 data-number="3"><span class="header-section-number">3</span> Was ist Pseudocode?</h1>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="skript/00-bilder/festmahl-PCL.svg" class="img-fluid figure-img" style="width:50.0%"></p>
+<p><img src="skript/00-bilder/festmahl-PCL.svg" class="img-fluid figure-img" style="width:50.0%" alt="Dekoratives Bild einer am gedeckten Tisch sitzenden Gesellschaft aus vier Personen. Ein Mann ist aufgestanden, um einen Toast auszusprechen."></p>
 <figcaption>&nbsp;</figcaption>
 </figure>
 </div>
@@ -278,7 +312,7 @@ Definition&nbsp;1: Pseudocode
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="skript/00-bilder/flussdiagramm-bubblesort-ms-mp.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p><img src="skript/00-bilder/flussdiagramm-bubblesort-ms-mp.png" class="img-fluid figure-img" style="width:50.0%" alt="Ein Flussdiagramm, dass den Programmablauf aus dem Reiter ausführlich zeigt."></p>
 <figcaption>Flussdiagramm Sortiere Aufsteigend</figcaption>
 </figure>
 </div>
@@ -456,7 +490,7 @@ Backen 25 Min.</p>
 <h2 data-number="4.2" class="anchored" data-anchor-id="mit-eva-zum-fokussprint"><span class="header-section-number">4.2</span> Mit EVA zum Fokussprint</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="skript/00-bilder/adam-eve-PCL-de.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p><img src="skript/00-bilder/adam-eve-PCL-de.png" class="img-fluid figure-img" style="width:50.0%" alt="Dekorative Grafik: Die biblische Eva reicht Adam im Paradies einen Apfel. Sie sagt: Probier` doch mal Fokussprint!"></p>
 <figcaption>&nbsp;</figcaption>
 </figure>
 </div>
@@ -657,7 +691,7 @@ SOLANGE i kleiner als 20 TUE
 <h2 data-number="4.4" class="anchored" data-anchor-id="programmablauf-visualisieren"><span class="header-section-number">4.4</span> Programmablauf visualisieren</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="skript/00-bilder/woman-speaker.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p><img src="skript/00-bilder/woman-speaker.png" class="img-fluid figure-img" style="width:50.0%" alt="Eine Person spricht durch ein Sprachrohr"></p>
 <figcaption>&nbsp;</figcaption>
 </figure>
 </div>
@@ -818,19 +852,80 @@ Beispiel&nbsp;2: Flussdiagramme in Python und R erstellen
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">Codebeispiel Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Schemdraw in Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false" href="">Codebeispiel R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-4" role="tab" aria-controls="tabset-4-4" aria-selected="false" href="">Mermaid in R</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
-
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Flussdiagramm mit Schemdraw und Graphviz in Python</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Schemdraw</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> subprocess</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>subprocess.call([<span class="st">'pip'</span>, <span class="st">'install'</span>, <span class="st">'schemdraw'</span>])</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> schemdraw</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> schemdraw.flow <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> schemdraw.Drawing() <span class="im">as</span> d:</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># durchgehender Prozess in korrekter Reihenfolge von Start bis Ende</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Start().label(<span class="st">"Mittagspause"</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Line().down()</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Box().label(<span class="st">"Kartoffeln abzählen"</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Line().down()</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> (mit_Schale <span class="op">:=</span> Decision(S <span class="op">=</span> <span class="st">"Ja"</span>, E <span class="op">=</span> <span class="st">"Nein"</span>).label(<span class="st">"Mit Schale?"</span>))</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Arrow().at(mit_Schale.S)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> (kochen <span class="op">:=</span> Box().label(<span class="st">"Kartoffeln kochen"</span>))</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Line().down()</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Box().label(<span class="st">"Kartoffeln essen"</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Line().down()</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Start().label(<span class="st">"Pause Ende"</span>)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># alternativer Ast der Verzweigung</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Arrow().right().at(mit_Schale.E)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> (schälen <span class="op">:=</span> Box().label(<span class="st">"Kartoffeln schälen"</span>))</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Wire(<span class="st">"|-"</span>, arrow <span class="op">=</span> <span class="st">"-&gt;"</span>).at(schälen.S).to(kochen.E) <span class="co"># .S + .E (oder andere Richtungsangaben) müssen gesetzt werden, |- definiert zunächst vertikale, rechtwinkelige Kante</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    d.draw()</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># d.save("Kartoffeln.svg")</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="co">## Graphviz</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="co">## benötigt eine lokale Installation von Graphviz https://graphviz.org/download/</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> subprocess</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>subprocess.call([<span class="st">'pip'</span>, <span class="st">'install'</span>, <span class="st">'graphviz'</span>]) <span class="co"># installiert das Modul graphviz</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> graphviz</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>dot <span class="op">=</span> graphviz.Digraph(name <span class="op">=</span> <span class="st">"Kartoffeln"</span>)</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="co">### Start / Ende</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"Mittagspause"</span>, shape <span class="op">=</span> <span class="st">"Mrecord"</span>) <span class="co"># optional label</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"Pause Ende"</span>, shape <span class="op">=</span> <span class="st">"Mrecord"</span>)</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="co">### Anweisungen</span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"Kartoffeln abzählen"</span>, shape <span class="op">=</span> <span class="st">"box"</span>)</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"Kartoffeln schälen"</span>, shape <span class="op">=</span> <span class="st">"box"</span>)</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"Kartoffeln kochen"</span>, shape <span class="op">=</span> <span class="st">"box"</span>)</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"Kartoffeln essen"</span>, shape <span class="op">=</span> <span class="st">"box"</span>)</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="co">### Entscheidung</span></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"mit Schale"</span>, shape <span class="op">=</span> <span class="st">"diamond"</span>)</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="co">### Kanten</span></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"Mittagspause"</span>, <span class="st">"Kartoffeln abzählen"</span>, arrowhead <span class="op">=</span> <span class="st">"none"</span>)</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"Kartoffeln abzählen"</span>, <span class="st">"mit Schale"</span>, arrowhead <span class="op">=</span> <span class="st">"none"</span>)</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"mit Schale"</span>, <span class="st">"Kartoffeln kochen"</span>, label <span class="op">=</span> <span class="st">"Ja"</span>)</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"mit Schale"</span>, <span class="st">"Kartoffeln schälen"</span>, label <span class="op">=</span> <span class="st">"nein"</span>)</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"Kartoffeln schälen"</span>, <span class="st">"Kartoffeln kochen"</span>, arrowhead <span class="op">=</span> <span class="st">"none"</span>)</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"Kartoffeln kochen"</span>, <span class="st">"Kartoffeln essen"</span>, arrowhead <span class="op">=</span> <span class="st">"none"</span>)</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"Kartoffeln essen"</span>, <span class="st">"Pause Ende"</span>, arrowhead <span class="op">=</span> <span class="st">"none"</span>)</span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>dot.render(<span class="st">"Kartoffeln.gv"</span>, cleanup <span class="op">=</span> <span class="va">True</span>, view <span class="op">=</span> <span class="va">True</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
-<div class="cell">
-<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Pseudocode_files/figure-html/python-schemdraw-1.png" class="img-fluid figure-img" width="614"></p>
+<p><img src="skript/00-bilder/Kartoffeln.svg" class="img-fluid figure-img" alt="Ein Flussdiagramm mit Schemdraw, um zur Mittagspause Kartoffeln mit oder ohne Schale zu kochen."></p>
 <figcaption>Flussdiagramm mit Schemdraw</figcaption>
 </figure>
 </div>
-</div>
-</div>
+<p><em>Hinweis: Aus technischen Gründen wurde die Grafik als Bild eingebunden.</em></p>
 </div>
 <div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
 <pre><code># Flussdiagramm mit DiagrammeR in R
@@ -957,7 +1052,7 @@ initialisieren1 --- Schleife1
 <!-- .svg fails to render with arrow heads -->
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="aufgaben/00-bilder/musterloesung-flussdiagramm.png" class="img-fluid figure-img"></p>
+<p><img src="aufgaben/00-bilder/musterloesung-flussdiagramm.png" class="img-fluid figure-img" alt="Das Flussdiagramm zum Mermaid-Code aus dem vorherigen Panel."></p>
 <figcaption>Flussdiagramm mit DiagrammeR in R</figcaption>
 </figure>
 </div>
@@ -1486,18 +1581,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1529,7 +1613,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1537,7 +1641,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1634,7 +1738,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

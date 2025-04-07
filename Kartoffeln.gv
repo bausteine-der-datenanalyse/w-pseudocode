@@ -1,0 +1,16 @@
+digraph Kartoffeln {
+	Mittagspause [shape=Mrecord]
+	"Pause Ende" [shape=Mrecord]
+	"Kartoffeln abzählen" [shape=box]
+	"Kartoffeln schälen" [shape=box]
+	"Kartoffeln kochen" [shape=box]
+	"Kartoffeln essen" [shape=box]
+	"mit Schale" [shape=diamond]
+	Mittagspause -> "Kartoffeln abzählen" [arrowhead=none]
+	"Kartoffeln abzählen" -> "mit Schale" [arrowhead=none]
+	"mit Schale" -> "Kartoffeln kochen" [label=Ja]
+	"mit Schale" -> "Kartoffeln schälen" [label=nein]
+	"Kartoffeln schälen" -> "Kartoffeln kochen" [arrowhead=none]
+	"Kartoffeln kochen" -> "Kartoffeln essen" [arrowhead=none]
+	"Kartoffeln essen" -> "Pause Ende" [arrowhead=none]
+}

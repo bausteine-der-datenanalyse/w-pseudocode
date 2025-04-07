@@ -614,7 +614,7 @@ Der Funktionsumfang und die Syntax unterscheiden sich und jedes Werkzeug hat eig
 
 ```{python}
 #| eval: false
-#| echo: false
+#| echo: true
 #| output: false
 
 # Flussdiagramm mit Schemdraw und Graphviz in Python
@@ -645,7 +645,7 @@ with schemdraw.Drawing() as d:
     d+= (schälen := Box().label("Kartoffeln schälen"))
     d+= Wire("|-", arrow = "->").at(schälen.S).to(kochen.E) # .S + .E (oder andere Richtungsangaben) müssen gesetzt werden, |- definiert zunächst vertikale, rechtwinkelige Kante
     
-     d.draw()
+    d.draw()
     # d.save("Kartoffeln.svg")
 
 ## Graphviz
@@ -686,7 +686,7 @@ dot.render("Kartoffeln.gv", cleanup = True, view = True)
 ## Schemdraw in Python
 
 ```{python}
-#| eval: true
+#| eval: false
 #| echo: false
 #| output: false
 
@@ -695,6 +695,7 @@ subprocess.call(['pip', 'install', 'schemdraw'])
 ```
 
 ```{python}
+#| eval: false
 #| echo: false
 #| label: python-schemdraw
 #| fig-cap: "Flussdiagramm mit Schemdraw"
@@ -724,7 +725,11 @@ with schemdraw.Drawing(show = False) as d:
  
     d.draw(show=False);
     # d.save("Kartoffeln.svg")
-``` 
+```
+
+![Flussdiagramm mit Schemdraw](skript/00-bilder/Kartoffeln.svg){fig-alt="Ein Flussdiagramm mit Schemdraw, um zur Mittagspause Kartoffeln mit oder ohne Schale zu kochen."}
+
+*Hinweis: Aus technischen Gründen wurde die Grafik als Bild eingebunden.*
 
 ## Codebeispiel R
 
