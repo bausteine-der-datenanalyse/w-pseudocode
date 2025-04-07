@@ -92,7 +92,7 @@ p {
 <!-- Die Lizenz wird manuell in einer Div erstellt, um Vorgaben für OER hinsichtlich Position und Format zu entsprechen. (licence key im YAML-Header funktioniert in PDF nicht.) -->
 
 :::: {layout="[20, 80]"}
-![](skript/00-bilder/CC-BY){fig-alt="Symbol des Lizenzhinweises Creative Commons BY"} <!-- Grafik ohne Titel und Dateiendung einbinden -->  
+![](skript/00-bilder/CC-BY.svg){fig-alt="Symbol des Lizenzhinweises Creative Commons BY"} <!-- Grafik ohne Titel und Dateiendung einbinden -->  
 
 Bausteine Computergestützter Datenanalyse von Lukas Arnold, Simone Arnold, Florian Bagemihl, Matthias Baitsch, Marc Fehr, Maik Poetzsch und Sebastian Seipel. Werkzeugbaustein Pseudocode von Maik Poetzsch ist lizensiert unter [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de). Das Werk ist abrufbar auf [GitHub](https://github.com/bausteine-der-datenanalyse). Ausgenommen von der Lizenz sind alle Logos und anders gekennzeichneten Inhalte. 2024
 
