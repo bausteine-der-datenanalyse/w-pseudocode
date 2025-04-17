@@ -171,7 +171,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">7. April 2025</p>
+      <p class="date">17. April 2025</p>
     </div>
   </div>
   
@@ -205,12 +205,18 @@ p {
 <p><img src="skript/00-bilder/CC-BY.svg" class="img-fluid" alt="Symbol des Lizenzhinweises Creative Commons BY"> <!-- Grafik ohne Titel und Dateiendung einbinden --></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
-<p>Bausteine Computergestützter Datenanalyse von Lukas Arnold, Simone Arnold, Florian Bagemihl, Matthias Baitsch, Marc Fehr, Maik Poetzsch und Sebastian Seipel. Werkzeugbaustein Pseudocode von Maik Poetzsch ist lizensiert unter <a href="https://creativecommons.org/licenses/by/4.0/deed.de">CC BY 4.0</a>. Das Werk ist abrufbar auf <a href="https://github.com/bausteine-der-datenanalyse">GitHub</a>. Ausgenommen von der Lizenz sind alle Logos und anders gekennzeichneten Inhalte. 2024</p>
+<p>Bausteine Computergestützter Datenanalyse von Lukas Arnold, Simone Arnold, Florian Bagemihl, Matthias Baitsch, Marc Fehr, Maik Poetzsch und Sebastian Seipel. Werkzeugbaustein Pseudocode von Maik Poetzsch ist lizensiert unter <a href="https://creativecommons.org/licenses/by/4.0/deed.de">CC BY 4.0</a>. Das Werk ist abrufbar auf <a href="https://github.com/bausteine-der-datenanalyse">GitHub</a>. Ausgenommen von der Lizenz sind alle Logos und anders gekennzeichneten Inhalte. 2025</p>
 </div>
 </div>
 </div>
 <p>Zitiervorschlag</p>
-<p>Arnold, Lukas, Simone Arnold, Matthias Baitsch, Marc Fehr, Maik Poetzsch, und Sebastian Seipel. 2024. „Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Pseudocode“. <a href="https://github.com/bausteine-der-datenanalyse/w-pseudocode" class="uri">https://github.com/bausteine-der-datenanalyse/w-pseudocode</a>.</p>
+<p>Arnold, Lukas, Simone Arnold, Florian Bagemihl, Matthias Baitsch, Marc Fehr, Maik Poetzsch, und Sebastian Seipel. 2025. „Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Pseudocode“. <a href="https://github.com/bausteine-der-datenanalyse/w-pseudocode" class="uri">https://github.com/bausteine-der-datenanalyse/w-pseudocode</a>.</p>
+<p>BibTeX-Vorlage</p>
+<pre><code>@misc{BCD-pseudocode-2025,
+ title={Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Pseudocode},
+ author={Arnold, Lukas and Arnold, Simone and Bagemihl, Florian and Baitsch, Matthias and Fehr, Marc and Poetzsch, Maik and Seipel, Sebastian},
+ year={2025},
+ url={https://github.com/bausteine-der-datenanalyse/w-pseudocode}} </code></pre>
 </div>
 <div style="page-break-after: always;"></div>
 <section id="voraussetzungen" class="level1" data-number="1">
@@ -853,69 +859,69 @@ Beispiel&nbsp;2: Flussdiagramme in Python und R erstellen
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Flussdiagramm mit Schemdraw und Graphviz in Python</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Schemdraw</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> subprocess</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>subprocess.call([<span class="st">'pip'</span>, <span class="st">'install'</span>, <span class="st">'schemdraw'</span>])</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> schemdraw</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> schemdraw.flow <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> schemdraw.Drawing() <span class="im">as</span> d:</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># durchgehender Prozess in korrekter Reihenfolge von Start bis Ende</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Start().label(<span class="st">"Mittagspause"</span>)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Line().down()</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Box().label(<span class="st">"Kartoffeln abzählen"</span>)</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Line().down()</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> (mit_Schale <span class="op">:=</span> Decision(S <span class="op">=</span> <span class="st">"Ja"</span>, E <span class="op">=</span> <span class="st">"Nein"</span>).label(<span class="st">"Mit Schale?"</span>))</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Arrow().at(mit_Schale.S)</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> (kochen <span class="op">:=</span> Box().label(<span class="st">"Kartoffeln kochen"</span>))</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Line().down()</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Box().label(<span class="st">"Kartoffeln essen"</span>)</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Line().down()</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Start().label(<span class="st">"Pause Ende"</span>)</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># alternativer Ast der Verzweigung</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Arrow().right().at(mit_Schale.E)</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> (schälen <span class="op">:=</span> Box().label(<span class="st">"Kartoffeln schälen"</span>))</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Wire(<span class="st">"|-"</span>, arrow <span class="op">=</span> <span class="st">"-&gt;"</span>).at(schälen.S).to(kochen.E) <span class="co"># .S + .E (oder andere Richtungsangaben) müssen gesetzt werden, |- definiert zunächst vertikale, rechtwinkelige Kante</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    d.draw()</span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># d.save("Kartoffeln.svg")</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="co">## Graphviz</span></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="co">## benötigt eine lokale Installation von Graphviz https://graphviz.org/download/</span></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> subprocess</span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>subprocess.call([<span class="st">'pip'</span>, <span class="st">'install'</span>, <span class="st">'graphviz'</span>]) <span class="co"># installiert das Modul graphviz</span></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> graphviz</span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>dot <span class="op">=</span> graphviz.Digraph(name <span class="op">=</span> <span class="st">"Kartoffeln"</span>)</span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="co">### Start / Ende</span></span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"Mittagspause"</span>, shape <span class="op">=</span> <span class="st">"Mrecord"</span>) <span class="co"># optional label</span></span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"Pause Ende"</span>, shape <span class="op">=</span> <span class="st">"Mrecord"</span>)</span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="co">### Anweisungen</span></span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"Kartoffeln abzählen"</span>, shape <span class="op">=</span> <span class="st">"box"</span>)</span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"Kartoffeln schälen"</span>, shape <span class="op">=</span> <span class="st">"box"</span>)</span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"Kartoffeln kochen"</span>, shape <span class="op">=</span> <span class="st">"box"</span>)</span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"Kartoffeln essen"</span>, shape <span class="op">=</span> <span class="st">"box"</span>)</span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="co">### Entscheidung</span></span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"mit Schale"</span>, shape <span class="op">=</span> <span class="st">"diamond"</span>)</span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="co">### Kanten</span></span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"Mittagspause"</span>, <span class="st">"Kartoffeln abzählen"</span>, arrowhead <span class="op">=</span> <span class="st">"none"</span>)</span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"Kartoffeln abzählen"</span>, <span class="st">"mit Schale"</span>, arrowhead <span class="op">=</span> <span class="st">"none"</span>)</span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"mit Schale"</span>, <span class="st">"Kartoffeln kochen"</span>, label <span class="op">=</span> <span class="st">"Ja"</span>)</span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"mit Schale"</span>, <span class="st">"Kartoffeln schälen"</span>, label <span class="op">=</span> <span class="st">"nein"</span>)</span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"Kartoffeln schälen"</span>, <span class="st">"Kartoffeln kochen"</span>, arrowhead <span class="op">=</span> <span class="st">"none"</span>)</span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"Kartoffeln kochen"</span>, <span class="st">"Kartoffeln essen"</span>, arrowhead <span class="op">=</span> <span class="st">"none"</span>)</span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"Kartoffeln essen"</span>, <span class="st">"Pause Ende"</span>, arrowhead <span class="op">=</span> <span class="st">"none"</span>)</span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>dot.render(<span class="st">"Kartoffeln.gv"</span>, cleanup <span class="op">=</span> <span class="va">True</span>, view <span class="op">=</span> <span class="va">True</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Flussdiagramm mit Schemdraw und Graphviz in Python</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Schemdraw</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> subprocess</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>subprocess.call([<span class="st">'pip'</span>, <span class="st">'install'</span>, <span class="st">'schemdraw'</span>])</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> schemdraw</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> schemdraw.flow <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> schemdraw.Drawing() <span class="im">as</span> d:</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># durchgehender Prozess in korrekter Reihenfolge von Start bis Ende</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Start().label(<span class="st">"Mittagspause"</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Line().down()</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Box().label(<span class="st">"Kartoffeln abzählen"</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Line().down()</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> (mit_Schale <span class="op">:=</span> Decision(S <span class="op">=</span> <span class="st">"Ja"</span>, E <span class="op">=</span> <span class="st">"Nein"</span>).label(<span class="st">"Mit Schale?"</span>))</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Arrow().at(mit_Schale.S)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> (kochen <span class="op">:=</span> Box().label(<span class="st">"Kartoffeln kochen"</span>))</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Line().down()</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Box().label(<span class="st">"Kartoffeln essen"</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Line().down()</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Start().label(<span class="st">"Pause Ende"</span>)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># alternativer Ast der Verzweigung</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Arrow().right().at(mit_Schale.E)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> (schälen <span class="op">:=</span> Box().label(<span class="st">"Kartoffeln schälen"</span>))</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    d<span class="op">+=</span> Wire(<span class="st">"|-"</span>, arrow <span class="op">=</span> <span class="st">"-&gt;"</span>).at(schälen.S).to(kochen.E) <span class="co"># .S + .E (oder andere Richtungsangaben) müssen gesetzt werden, |- definiert zunächst vertikale, rechtwinkelige Kante</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>    d.draw()</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># d.save("Kartoffeln.svg")</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="co">## Graphviz</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="co">## benötigt eine lokale Installation von Graphviz https://graphviz.org/download/</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> subprocess</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>subprocess.call([<span class="st">'pip'</span>, <span class="st">'install'</span>, <span class="st">'graphviz'</span>]) <span class="co"># installiert das Modul graphviz</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> graphviz</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>dot <span class="op">=</span> graphviz.Digraph(name <span class="op">=</span> <span class="st">"Kartoffeln"</span>)</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="co">### Start / Ende</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"Mittagspause"</span>, shape <span class="op">=</span> <span class="st">"Mrecord"</span>) <span class="co"># optional label</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"Pause Ende"</span>, shape <span class="op">=</span> <span class="st">"Mrecord"</span>)</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="co">### Anweisungen</span></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"Kartoffeln abzählen"</span>, shape <span class="op">=</span> <span class="st">"box"</span>)</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"Kartoffeln schälen"</span>, shape <span class="op">=</span> <span class="st">"box"</span>)</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"Kartoffeln kochen"</span>, shape <span class="op">=</span> <span class="st">"box"</span>)</span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"Kartoffeln essen"</span>, shape <span class="op">=</span> <span class="st">"box"</span>)</span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a><span class="co">### Entscheidung</span></span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>dot.node(name <span class="op">=</span> <span class="st">"mit Schale"</span>, shape <span class="op">=</span> <span class="st">"diamond"</span>)</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a><span class="co">### Kanten</span></span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"Mittagspause"</span>, <span class="st">"Kartoffeln abzählen"</span>, arrowhead <span class="op">=</span> <span class="st">"none"</span>)</span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"Kartoffeln abzählen"</span>, <span class="st">"mit Schale"</span>, arrowhead <span class="op">=</span> <span class="st">"none"</span>)</span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"mit Schale"</span>, <span class="st">"Kartoffeln kochen"</span>, label <span class="op">=</span> <span class="st">"Ja"</span>)</span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"mit Schale"</span>, <span class="st">"Kartoffeln schälen"</span>, label <span class="op">=</span> <span class="st">"nein"</span>)</span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"Kartoffeln schälen"</span>, <span class="st">"Kartoffeln kochen"</span>, arrowhead <span class="op">=</span> <span class="st">"none"</span>)</span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"Kartoffeln kochen"</span>, <span class="st">"Kartoffeln essen"</span>, arrowhead <span class="op">=</span> <span class="st">"none"</span>)</span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">"Kartoffeln essen"</span>, <span class="st">"Pause Ende"</span>, arrowhead <span class="op">=</span> <span class="st">"none"</span>)</span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>dot.render(<span class="st">"Kartoffeln.gv"</span>, cleanup <span class="op">=</span> <span class="va">True</span>, view <span class="op">=</span> <span class="va">True</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
