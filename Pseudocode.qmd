@@ -94,13 +94,13 @@ p {
 :::: {layout="[20, 80]"}
 ![](skript/00-bilder/CC-BY.svg){fig-alt="Symbol des Lizenzhinweises Creative Commons BY"} <!-- Grafik ohne Titel und Dateiendung einbinden -->  
 
-Bausteine Computergestützter Datenanalyse von Lukas Arnold, Simone Arnold, Florian Bagemihl, Matthias Baitsch, Marc Fehr, Maik Poetzsch und Sebastian Seipel. Werkzeugbaustein Pseudocode von Maik Poetzsch ist lizensiert unter [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de). Das Werk ist abrufbar auf [GitHub](https://github.com/bausteine-der-datenanalyse). Ausgenommen von der Lizenz sind alle Logos und anders gekennzeichneten Inhalte. 2025
+Bausteine Computergestützter Datenanalyse von Lukas Arnold, Simone Arnold, Florian Bagemihl, Matthias Baitsch, Marc Fehr, Franca Hollmann, Maik Poetzsch und Sebastian Seipel. Werkzeugbaustein Pseudocode von Maik Poetzsch ist lizensiert unter [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de). Das Werk ist abrufbar auf [GitHub](https://github.com/bausteine-der-datenanalyse). Ausgenommen von der Lizenz sind alle Logos und anders gekennzeichneten Inhalte. 2025
 
 ::::
 
 Zitiervorschlag
 
-Arnold, Lukas, Simone Arnold, Florian Bagemihl, Matthias Baitsch, Marc Fehr, Maik Poetzsch, und Sebastian Seipel. 2025. „Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Pseudocode“. <https://github.com/bausteine-der-datenanalyse/w-pseudocode>.
+Arnold, Lukas, Simone Arnold, Florian Bagemihl, Matthias Baitsch, Marc Fehr, Franca Hollmann, Maik Poetzsch, und Sebastian Seipel. 2025. „Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Pseudocode“. <https://github.com/bausteine-der-datenanalyse/w-pseudocode>.
 
 
 BibTeX-Vorlage
@@ -108,7 +108,7 @@ BibTeX-Vorlage
 ```
 @misc{BCD-pseudocode-2025,
  title={Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Pseudocode},
- author={Arnold, Lukas and Arnold, Simone and Bagemihl, Florian and Baitsch, Matthias and Fehr, Marc and Poetzsch, Maik and Seipel, Sebastian},
+ author={Arnold, Lukas and Arnold, Simone and Bagemihl, Florian and Baitsch, Matthias and Fehr, Marc and Hollmann, Franca and Poetzsch, Maik and Seipel, Sebastian},
  year={2025},
  url={https://github.com/bausteine-der-datenanalyse/w-pseudocode}} 
 ```
