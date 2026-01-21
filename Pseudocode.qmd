@@ -122,7 +122,15 @@ BibTeX-Vorlage
 
 {{< include _lernziele.md >}}
 
-# Was ist Pseudocode?
+# Pseudocode
+
+<div style="position: relative; width: 100%; aspect-ratio: 16 / 9;">
+  <iframe src="https://av.tib.eu/player/71642" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+&nbsp;
+
+## Was ist Pseudocode?
 
 ![&nbsp;](skript/00-bilder/festmahl-PCL.svg){fig-alt="Dekoratives Bild einer am gedeckten Tisch sitzenden Gesellschaft aus vier Personen. Ein Mann ist aufgestanden, um einen Toast auszusprechen." width="50%"}
 
@@ -154,7 +162,7 @@ Pseudocode beschreibt einen Lösungsweg für informatische Aufgabenstellungen in
 Pseudocode ist darüber hinaus auch ein Kommunikationsmittel, um sich mit anderen über informatische Probleme und deren Lösung auszutauschen (z. B. Kommiliton:innen, Betreuer:innen).
 :::
 
-### Pseudocode von einfach bis ausführlich
+## Pseudocode von einfach bis ausführlich
 In welcher Form und wie detailliert Sie Pseudocode formulieren, ist abhängig von Ihrem Kenntnisstand und Ihrem Ziel: Für die Strukturierung Ihres Programms in aufeinanderfolgende Zwischenschritte und die Identifizierung von Abhängigkeiten ist eine einfache Auflistung von Arbeitsschritten ausreichend. Für die Entwicklung eines Algorithmus sowie die Identifizierung von benötigten Methoden (z. B. Schleifen) und Werkzeugen (z. B. spezialisierte Pakete) wird es erforderlich sein, Programmanweisungen detaillierter zu beschreiben. Eine ausführliche Darstellung hilft Ihnen zum Beispiel, wiederkehrende Arbeitsschritte zu identifizieren, die in eine Funktion ausgelagert werden können. Für die Präsentation Ihres Programms auf einer Fachtagung oder die Dokumentation in einem Benutzer:innenhandbuch kann ein Flussdiagramm zweckmäßig sein.
 
 ::: {.panel-tabset}
@@ -1052,6 +1060,13 @@ SpeichereBoxplot
 :::
 
 # Das Wichtigste
+
+<div style="position: relative; width: 100%; aspect-ratio: 16 / 9;">
+  <iframe src="https://av.tib.eu/player/71643" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+&nbsp;
+
 In welcher Form und wie detailliert Sie Pseudocode formulieren, hängt von Ihrem Kenntnisstand und Ihrem Ziel ab. Die Entwicklung von Pseudocode kann als Kreativitätstechnik ohne formale Vorgaben eingesetzt werden, in detaillierter Form bei der Ausarbeitung einer algorithmischen Lösung helfen oder visuell in Form eines Flussdiagramms Ihre Kommunikation mit Dritten unterstützen.
 
 # Lernzielkontrolle
