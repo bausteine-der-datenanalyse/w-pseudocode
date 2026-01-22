@@ -60,7 +60,5 @@ jobs:
       # Render full 
       - name: Publish to GitHub Pages (and render) 
         uses: quarto-dev/quarto-actions/render@v2
-        with:
-          quiet: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
